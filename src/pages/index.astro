@@ -51,7 +51,7 @@ const images = {
     <div class="cinematic-gradient absolute inset-0"></div>
 
     <!-- Hero Content -->
-    <div class="relative z-10 w-full px-8 pb-16 max-w-screen-2xl mx-auto">
+    <div class="relative z-10 w-full px-4 md:px-8 pb-16 max-w-screen-2xl mx-auto">
       <h1 class="font-headline font-black uppercase leading-none tracking-tighter text-on-surface" style="font-size: clamp(4rem, 14vw, 14rem);">
         ON <span class="italic text-primary">A</span> ROLL
       </h1>
@@ -72,7 +72,7 @@ const images = {
   </section>
 
   <!-- ===== SECTION 2: THREE PILLARS ===== -->
-  <section class="py-32 px-8 max-w-screen-2xl mx-auto animate-on-scroll">
+  <section class="py-32 px-4 md:px-8 max-w-screen-2xl mx-auto animate-on-scroll">
     <div class="grid grid-cols-12 gap-8">
 
       <!-- Pillar 01: Specialty Rolls — spans 7 cols -->
@@ -128,7 +128,7 @@ const images = {
 
   <!-- ===== SECTION 3: ABOUT PREVIEW ===== -->
   <section class="bg-surface-container-low py-32 animate-on-scroll">
-    <div class="px-8 max-w-screen-2xl mx-auto">
+    <div class="px-4 md:px-8 max-w-screen-2xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
 
         <!-- Text side — 5 cols -->
@@ -159,7 +159,7 @@ const images = {
             />
           </div>
           <!-- Floating Stats Card -->
-          <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-4 bg-surface-container-lowest p-8 space-y-1 min-w-[160px]">
+          <div class="absolute bottom-0 left-0 translate-y-1/2 lg:-translate-x-4 bg-surface-container-lowest p-8 space-y-1 min-w-[160px]">
             <p class="text-6xl font-headline font-black text-primary leading-none">120+</p>
             <p class="text-xs font-label uppercase tracking-[0.3em] text-secondary">Unique Menu Items</p>
           </div>
@@ -171,7 +171,7 @@ const images = {
 
   <!-- ===== SECTION 4: SIGNATURE DISHES ===== -->
   <section class="py-32 animate-on-scroll">
-    <div class="px-8 max-w-screen-2xl mx-auto mb-16">
+    <div class="px-4 md:px-8 max-w-screen-2xl mx-auto mb-16">
       <span class="text-primary uppercase tracking-[0.3em] font-bold text-xs">Featured</span>
       <h2 class="text-5xl font-headline font-black uppercase leading-none mt-4">Signature Dishes</h2>
     </div>
@@ -218,12 +218,12 @@ const images = {
 
   <!-- ===== SECTION 5: GALLERY ===== -->
   <section class="py-32 bg-surface-container-low animate-on-scroll">
-    <div class="px-8 max-w-screen-2xl mx-auto mb-16">
+    <div class="px-4 md:px-8 max-w-screen-2xl mx-auto mb-16">
       <span class="text-primary uppercase tracking-[0.3em] font-bold text-xs">Gallery</span>
       <h2 class="text-5xl font-headline font-black uppercase leading-none mt-4">The Experience</h2>
     </div>
-    <div class="px-8 max-w-screen-2xl mx-auto">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="px-4 md:px-8 max-w-screen-2xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
 
         <!-- Column 1: normal -->
         <div class="space-y-4">
@@ -235,8 +235,8 @@ const images = {
           </div>
         </div>
 
-        <!-- Column 2: offset down (pt-24) -->
-        <div class="space-y-4 pt-24">
+        <!-- Column 2: offset down (pt-24 on md+) -->
+        <div class="space-y-4 md:pt-24">
           <div class="overflow-hidden">
             <img src={images.gallery[2]} alt="Gallery image 3" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />
           </div>
@@ -255,8 +255,8 @@ const images = {
           </div>
         </div>
 
-        <!-- Column 4: offset down (pt-16) -->
-        <div class="space-y-4 pt-16">
+        <!-- Column 4: offset down (pt-16 on md+) -->
+        <div class="space-y-4 md:pt-16">
           <div class="overflow-hidden">
             <img src={images.gallery[6]} alt="Gallery image 7" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />
           </div>
@@ -271,7 +271,7 @@ const images = {
 
   <!-- ===== SECTION 6: LIVE ACTS ===== -->
   <section class="py-32 animate-on-scroll">
-    <div class="px-8 max-w-screen-2xl mx-auto">
+    <div class="px-4 md:px-8 max-w-screen-2xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
         <!-- Left: Event Listings -->
@@ -351,7 +351,7 @@ const images = {
 
   <!-- CTA Banner -->
   <section class="bg-primary py-20 text-center">
-    <div class="px-8 max-w-screen-2xl mx-auto">
+    <div class="px-4 md:px-8 max-w-screen-2xl mx-auto">
       <h2 class="text-4xl md:text-6xl font-headline font-black uppercase tracking-tight text-on-primary leading-none mb-8">
         Ready to Roll?
       </h2>
