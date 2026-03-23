@@ -1,0 +1,55 @@
+---
+import MenuItem from './MenuItem.astro';
+
+interface Item {
+  name: string;
+  price: number;
+  description?: string;
+  spicy?: boolean;
+  note?: string;
+}
+
+interface Props {
+  title: string;
+  label: string;
+  subtitle?: string;
+  description?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  sectionId: string;
+  items: Item[];
+}
+
+const { title, label, subtitle, description, imageSrc, imageAlt, sectionId, items } = Astro.props;
+---
+
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-20" id={sectionId}>
+  <div class="lg:col-span-4 space-y-8">
+    <span class="text-primary uppercase tracking-[0.3em] font-bold text-xs">{label}</span>
+    <h2 class="text-5xl font-headline font-black uppercase leading-none">{title}</h2>
+    {subtitle && <p class="text-secondary font-light text-sm">{subtitle}</p>}
+    {description && <p class="text-secondary font-light leading-relaxed max-w-sm">{description}</p>}
+    {imageSrc && (
+      <div class="aspect-[3/4] w-full bg-surface-container-low overflow-hidden">
+        <img
+          class="w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-700"
+          src={imageSrc}
+          alt={imageAlt || title}
+        />
+      </div>
+    )}
+  </div>
+  <div class="lg:col-span-8 space-y-12 pt-12">
+    <div class="space-y-16">
+      {items.map((item) => (
+        <MenuItem
+          name={item.name}
+          price={item.price}
+          description={item.description}
+          spicy={item.spicy}
+          note={item.note}
+        />
+      ))}
+    </div>
+  </div>
+</section>

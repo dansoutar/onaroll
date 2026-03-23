@@ -1,0 +1,45 @@
+export default {
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}'],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        "surface-container-low": "#1c1b1b",
+        "surface-dim": "#131313",
+        "outline": "#9f8d82",
+        "surface-variant": "#353534",
+        "on-background": "#e5e2e1",
+        "surface-container-lowest": "#0e0e0e",
+        "outline-variant": "#52443b",
+        "surface": "#131313",
+        "on-surface-variant": "#d7c3b7",
+        "surface-container": "#201f1f",
+        "surface-tint": "#ffb784",
+        "secondary": "#c8c6c5",
+        "primary": "#ffb784",
+        "background": "#131313",
+        "primary-container": "#d28e5d",
+        "surface-bright": "#393939",
+        "on-surface": "#e5e2e1",
+        "surface-container-high": "#2a2a2a",
+        "surface-container-highest": "#353534",
+        "on-primary": "#4f2500",
+        "tertiary": "#ffb3b0",
+        "error": "#ffb4ab",
+        "secondary-container": "#474747",
+      },
+      fontFamily: {
+        "headline": ['"Space Grotesk"', 'sans-serif'],
+        "body": ['"Manrope"', 'sans-serif'],
+        "label": ['"Manrope"', 'sans-serif'],
+      },
+      borderRadius: {
+        "DEFAULT": "0px",
+        "lg": "0px",
+        "xl": "0px",
+        "full": "9999px"
+      },
+    },
+  },
+  plugins: [],
+}

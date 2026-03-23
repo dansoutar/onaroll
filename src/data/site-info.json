@@ -1,0 +1,33 @@
+{
+  "name": "On A Roll Sushi & Sliders",
+  "tagline": "Good Food. Good Music. Good People. Good Vibes.",
+  "address": "63 Pitt St E, Windsor, ON N9A 1G5",
+  "phone": "226-221-9448",
+  "email": "onaroll63@gmail.com",
+  "established": 2017,
+  "social": {
+    "facebook": "https://www.facebook.com/OnaRollSushi",
+    "instagram": "https://www.instagram.com/onaroll63/"
+  },
+  "orderOnline": "https://www.skipthedishes.com/on-a-sushi-and-sliders-pitt",
+  "hours": {
+    "bar": {
+      "monday": "Closed",
+      "tuesday": "4pm – 2am",
+      "wednesday": "4pm – 2am",
+      "thursday": "4pm – 2am",
+      "friday": "4pm – 2am",
+      "saturday": "4pm – 2am",
+      "sunday": "4pm – 2am"
+    },
+    "kitchen": {
+      "monday": "Closed",
+      "tuesday": "4pm – 11pm",
+      "wednesday": "4pm – 11pm",
+      "thursday": "4pm – 11pm",
+      "friday": "4pm – 2am",
+      "saturday": "4pm – 2am",
+      "sunday": "4pm – 11pm"
+    }
+  }
+}

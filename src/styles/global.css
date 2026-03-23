@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #131313;
+    color: #e5e2e1;
+    font-family: 'Manrope', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.cinematic-gradient {
+  background: linear-gradient(to bottom, rgba(14,14,14,0) 0%, rgba(14,14,14,0.4) 40%, rgba(14,14,14,0.9) 80%, rgba(14,14,14,1) 100%);
+}
+
+.hero-scrim {
+  background: linear-gradient(to bottom, rgba(19, 19, 19, 0.4) 0%, rgba(19, 19, 19, 1) 100%);
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(255, 183, 132, 0.3);
+}
+
+.music-glitch:hover {
+  text-shadow: 2px 0 #ffb784, -2px 0 #ffb3b0;
+}
+
+.dotted-leader {
+  border-bottom: 2px dotted #52443b;
+  flex-grow: 1;
+  margin: 0 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.scrim-gradient {
+  background: linear-gradient(to top, rgba(14, 14, 14, 1) 0%, rgba(14, 14, 14, 0) 100%);
+}
+
+.glass-nav {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Scroll animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,0 +1,74 @@
+---
+import siteInfo from '../data/site-info.json';
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-surface-container-lowest pt-24 pb-12">
+  <div class="max-w-screen-2xl mx-auto px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-16">
+      <!-- Brand -->
+      <div class="space-y-6">
+        <a href="/" class="text-2xl font-black tracking-widest text-primary font-headline uppercase">ON A ROLL</a>
+        <p class="text-secondary font-light leading-relaxed text-sm max-w-xs mt-4">{siteInfo.tagline}</p>
+        <div class="flex gap-4 mt-4">
+          <a href={siteInfo.social.facebook} target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-primary transition-colors text-sm font-label uppercase tracking-widest">Facebook</a>
+          <span class="text-outline-variant">|</span>
+          <a href={siteInfo.social.instagram} target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-primary transition-colors text-sm font-label uppercase tracking-widest">Instagram</a>
+        </div>
+      </div>
+
+      <!-- Nav Links -->
+      <div class="space-y-6">
+        <h4 class="text-xs font-bold uppercase tracking-[0.3em] text-primary font-label">Navigate</h4>
+        <nav class="flex flex-col gap-4">
+          <a href="/" class="text-secondary hover:text-primary transition-colors font-label text-sm">Home</a>
+          <a href="/menu" class="text-secondary hover:text-primary transition-colors font-label text-sm">Menu</a>
+          <a href="/about" class="text-secondary hover:text-primary transition-colors font-label text-sm">About</a>
+          <a href="/contact" class="text-secondary hover:text-primary transition-colors font-label text-sm">Contact</a>
+          <a href={siteInfo.orderOnline} target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-primary transition-colors font-label text-sm">Order Online</a>
+        </nav>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="space-y-6">
+        <h4 class="text-xs font-bold uppercase tracking-[0.3em] text-primary font-label">Find Us</h4>
+        <div class="space-y-4 text-sm font-label text-secondary">
+          <p class="leading-relaxed">{siteInfo.address}</p>
+          <p><a href={`tel:${siteInfo.phone}`} class="hover:text-primary transition-colors">{siteInfo.phone}</a></p>
+          <p><a href={`mailto:${siteInfo.email}`} class="hover:text-primary transition-colors">{siteInfo.email}</a></p>
+        </div>
+        <div class="space-y-2 text-sm font-label text-secondary mt-4">
+          <p class="text-primary text-xs uppercase tracking-widest">Bar Hours</p>
+          <p>Tue–Sun: 4pm – 2am</p>
+          <p>Mon: Closed</p>
+          <p class="text-primary text-xs uppercase tracking-widest mt-3">Kitchen Hours</p>
+          <p>Tue–Thu, Sun: 4pm – 11pm</p>
+          <p>Fri–Sat: 4pm – 2am</p>
+          <p>Mon: Closed</p>
+        </div>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="space-y-6">
+        <h4 class="text-xs font-bold uppercase tracking-[0.3em] text-primary font-label">Stay In The Loop</h4>
+        <p class="text-secondary text-sm font-label leading-relaxed">Get updates on live music, specials, and events.</p>
+        <div class="mt-4">
+          <input
+            type="email"
+            placeholder="Your email address"
+            class="w-full bg-transparent border-b border-outline-variant text-secondary placeholder:text-outline font-label text-sm py-3 outline-none focus:border-primary transition-colors"
+          />
+          <button class="mt-4 w-full bg-primary text-on-primary py-3 font-headline font-bold uppercase tracking-widest text-xs hover:scale-95 transition-transform">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-outline-variant/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-outline text-xs font-label">© {currentYear} On A Roll Sushi & Sliders. All rights reserved.</p>
+      <p class="text-outline text-xs font-label">63 Pitt St E, Windsor, ON — Est. {siteInfo.established}</p>
+    </div>
+  </div>
+</footer>
