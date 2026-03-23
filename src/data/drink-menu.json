@@ -1,0 +1,60 @@
+{
+  "cocktails": [
+    { "name": "American Woman", "price": 14, "description": "Tequila blanco, cucumber, jalapeño, lime, agave, salt rim", "spicy": true, "note": "Upgrade to Casamigos Reposado +$4" },
+    { "name": "T.N.T.", "price": 13, "description": "Bourbon, ginger beer, habanero shrub, lemon, honey", "spicy": true, "note": "Upgrade to Blanton's Single Barrel +$6" },
+    { "name": "Night Moves", "price": 14, "description": "Mezcal, blood orange, ancho chili liqueur, lime, smoked salt", "spicy": true, "note": "Upgrade to Del Maguey Vida +$5" },
+    { "name": "Hot Blooded", "price": 13, "description": "Vodka, serrano-infused watermelon, lime, tajín rim", "spicy": true, "note": "Upgrade to Grey Goose +$4" },
+    { "name": "Roxanne", "price": 12, "description": "Gin, elderflower, grapefruit, rosemary, tonic" },
+    { "name": "Purple Rain", "price": 13, "description": "Butterfly pea tea vodka, lavender, lemon, honey, prosecco float" },
+    { "name": "Little Wing", "price": 12, "description": "Rum, coconut, pineapple, lime, toasted coconut rim" },
+    { "name": "Midnight Rider", "price": 13, "description": "Whisky, cold brew, kahlúa, cream, chocolate bitters" },
+    { "name": "Rolling Stone", "price": 12, "description": "Aperol, prosecco, blood orange, rosemary sprig" },
+    { "name": "Rhiannon", "price": 14, "description": "Gin, St-Germain, cucumber, mint, lime, sparkling water", "note": "Upgrade to Hendrick's +$3" },
+    { "name": "Simple Man", "price": 11, "description": "Bourbon, honey, lemon, angostura bitters — a classic done right", "note": "Upgrade to Knob Creek +$4" },
+    { "name": "Space Oddity", "price": 15, "description": "Cognac, Chambord, lychee, lime, edible galaxy shimmer" },
+    { "name": "Golden Years", "price": 12, "description": "Champagne, peach purée, elderflower, orange bitters" },
+    { "name": "Tiny Dancer", "price": 13, "description": "Tequila, blue curaçao, lime, agave, tajín, citrus salt" }
+  ],
+  "whiteWine": [
+    { "name": "Kim Crawford Sauvignon Blanc", "price": 11, "description": "Marlborough, New Zealand — crisp citrus, fresh cut grass" },
+    { "name": "Santa Margherita Pinot Grigio", "price": 13, "description": "Valdadige, Italy — golden apple, citrus, light floral notes" }
+  ],
+  "redWine": [
+    { "name": "Louis Martini Cabernet Sauvignon", "price": 12, "description": "Sonoma County, California — dark fruit, oak, smooth tannins" },
+    { "name": "Meiomi Pinot Noir", "price": 13, "description": "California — strawberry, blackberry, mocha, creamy finish" }
+  ],
+  "wineByBottle": [
+    { "name": "Kim Crawford Sauvignon Blanc", "price": 42, "description": "Marlborough, New Zealand" },
+    { "name": "Louis Martini Cabernet Sauvignon", "price": 48, "description": "Sonoma County, California" }
+  ],
+  "sake": [
+    { "name": "Gekkeikan Sake", "price": 9, "description": "Classic junmai — smooth, slightly sweet, pairs with anything" },
+    { "name": "Hakutsuru Nigori", "price": 11, "description": "Unfiltered cloudy sake — rich, creamy, tropical fruit notes" }
+  ],
+  "premiumBottles": [
+    { "name": "Bacardi Superior", "price": 150 },
+    { "name": "Grey Goose Vodka", "price": 200 },
+    { "name": "Casamigos Blanco", "price": 220 },
+    { "name": "Johnnie Walker Black", "price": 180 },
+    { "name": "Hennessy VS", "price": 200 },
+    { "name": "Don Julio 1942", "price": 350 }
+  ],
+  "domesticBottles": [
+    { "name": "Budweiser", "price": 6 },
+    { "name": "Bud Light", "price": 6 },
+    { "name": "Coors Light", "price": 6 },
+    { "name": "Molson Canadian", "price": 6 },
+    { "name": "Kokanee", "price": 6 },
+    { "name": "Moosehead Lager", "price": 6 }
+  ],
+  "onTap": [
+    { "name": "Stella Artois", "price": 8, "description": "Belgian lager — crisp, clean, refreshing" },
+    { "name": "Coors Light", "price": 7, "description": "Light lager — easy drinking" },
+    { "name": "Muskoka Craft Lager", "price": 9, "description": "Ontario craft — golden, balanced, smooth" },
+    { "name": "Guinness Draught", "price": 9, "description": "Irish dry stout — roasted, creamy, iconic" }
+  ],
+  "tallCans": [
+    { "name": "Pabst Blue Ribbon", "price": 7, "description": "473ml — the original easy drinker" },
+    { "name": "White Claw Hard Seltzer", "price": 8, "description": "473ml — mango or black cherry" }
+  ]
+}

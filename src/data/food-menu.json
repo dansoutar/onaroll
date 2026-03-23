@@ -1,0 +1,81 @@
+{
+  "specialtyRolls": [
+    { "name": "Classic Dragon", "price": 18, "description": "Tempura shrimp, cucumber, topped with avocado & tobiko" },
+    { "name": "Rainbow Roll", "price": 19, "description": "Crab, cucumber, avocado, topped with assorted sashimi" },
+    { "name": "Spider Roll", "price": 17, "description": "Soft shell crab, cucumber, avocado, spicy mayo" },
+    { "name": "Volcano", "price": 20, "description": "Spicy tuna, cucumber, topped with baked scallop & sriracha", "spicy": true },
+    { "name": "Dynamite", "price": 18, "description": "Shrimp tempura, avocado, cucumber, topped with spicy salmon", "spicy": true },
+    { "name": "Black Widow", "price": 21, "description": "Lobster, mango, avocado, wrapped in black rice, ponzu glaze" },
+    { "name": "Rock & Roll", "price": 16, "description": "Salmon, cream cheese, cucumber, deep fried with teriyaki drizzle" },
+    { "name": "Golden Gate", "price": 19, "description": "Yellowfin tuna, jalapeño, yuzu mayo, crispy shallots", "spicy": true },
+    { "name": "Pitt Street Roll", "price": 22, "description": "Bluefin toro, truffle oil, microgreens, gold leaf" },
+    { "name": "Detroit River", "price": 17, "description": "Smoked salmon, cream cheese, capers, everything bagel crunch" },
+    { "name": "Motor City", "price": 18, "description": "Wagyu beef, asparagus, truffle aioli, tempura flakes" },
+    { "name": "Purple Rain", "price": 16, "description": "Salmon, avocado, purple cabbage slaw, ginger vinaigrette" },
+    { "name": "Sunset Strip", "price": 20, "description": "Spicy scallop, mango, cucumber, topped with seared tuna", "spicy": true },
+    { "name": "Back in Black", "price": 18, "description": "Blackened salmon, cream cheese, cucumber, squid ink drizzle" },
+    { "name": "The Closer", "price": 21, "description": "King crab, avocado, cucumber, topped with torched salmon & caviar" },
+    { "name": "Winding Road", "price": 17, "description": "Eel, avocado, topped with sweet eel sauce & sesame" },
+    { "name": "Free Bird", "price": 16, "description": "Tempura chicken, avocado, red pepper, honey sriracha", "spicy": true }
+  ],
+  "veggieRolls": [
+    { "name": "Avocado Roll", "price": 8, "description": "Fresh avocado, sesame" },
+    { "name": "Cucumber Roll", "price": 7, "description": "Crisp cucumber, sesame" },
+    { "name": "Sweet Potato Roll", "price": 9, "description": "Tempura sweet potato, avocado" },
+    { "name": "Veggie Crunch", "price": 10, "description": "Avocado, cucumber, carrot, red pepper, tempura flakes" },
+    { "name": "Mango Tango", "price": 11, "description": "Mango, avocado, cucumber, sweet chili" },
+    { "name": "Garden Roll", "price": 9, "description": "Spinach, avocado, cucumber, carrot, ponzu" }
+  ],
+  "smallRolls": [
+    { "name": "Salmon", "price": 7 },
+    { "name": "Tuna", "price": 7 },
+    { "name": "Yellowtail", "price": 8 },
+    { "name": "Shrimp", "price": 7 },
+    { "name": "Eel", "price": 8 },
+    { "name": "Crab", "price": 7 },
+    { "name": "Scallop", "price": 8 },
+    { "name": "Spicy Salmon", "price": 8, "spicy": true },
+    { "name": "Spicy Tuna", "price": 8, "spicy": true },
+    { "name": "Philadelphia", "price": 8 },
+    { "name": "California", "price": 7 },
+    { "name": "Alaska", "price": 8 },
+    { "name": "Boston", "price": 7 },
+    { "name": "Caterpillar", "price": 9 }
+  ],
+  "nigiri": [
+    { "name": "Salmon Nigiri", "price": 6, "description": "2 pieces" },
+    { "name": "Tuna Nigiri", "price": 6, "description": "2 pieces" },
+    { "name": "Yellowtail Nigiri", "price": 7, "description": "2 pieces" },
+    { "name": "Shrimp Nigiri", "price": 6, "description": "2 pieces" },
+    { "name": "Eel Nigiri", "price": 7, "description": "2 pieces" },
+    { "name": "Scallop Nigiri", "price": 7, "description": "2 pieces" }
+  ],
+  "sashimi": [
+    { "name": "Salmon Sashimi", "price": 10, "description": "4 pieces" },
+    { "name": "Tuna Sashimi", "price": 11, "description": "4 pieces" },
+    { "name": "Yellowtail Sashimi", "price": 12, "description": "4 pieces" },
+    { "name": "Shrimp Sashimi", "price": 10, "description": "4 pieces" },
+    { "name": "Scallop Sashimi", "price": 12, "description": "4 pieces" },
+    { "name": "Octopus Sashimi", "price": 11, "description": "4 pieces" }
+  ],
+  "sliders": [
+    { "name": "The OG Smash", "price": 6, "description": "Double smash patty, American cheese, special sauce, pickles" },
+    { "name": "Crispy Chicken", "price": 6, "description": "Nashville-style fried chicken thigh, coleslaw, honey butter" },
+    { "name": "Wagyu Burger", "price": 6, "description": "Wagyu patty, aged cheddar, caramelized onion, truffle aioli" },
+    { "name": "Pulled Pork", "price": 6, "description": "Slow-smoked pork, apple slaw, bourbon BBQ sauce" },
+    { "name": "Spicy Shrimp", "price": 6, "description": "Crispy shrimp, jalapeño slaw, sriracha mayo", "spicy": true },
+    { "name": "Lobster Roll", "price": 6, "description": "Atlantic lobster, lemon butter, chive, toasted brioche" },
+    { "name": "Black Bean", "price": 6, "description": "House black bean patty, avocado, pickled onion, chipotle aioli" },
+    { "name": "BBQ Brisket", "price": 6, "description": "12-hour smoked brisket, aged cheddar, house pickles, onion rings" },
+    { "name": "Mushroom Truffle", "price": 6, "description": "Portobello, gruyère, truffle oil, arugula, balsamic" },
+    { "name": "The Closer", "price": 6, "description": "Double wagyu, double cheese, bacon, special sauce, lettuce, tomato" }
+  ],
+  "appetizers": [
+    { "name": "Edamame", "price": 7, "description": "Steamed or salted, choice of seasoning" },
+    { "name": "Gyoza", "price": 12, "description": "Pan-fried pork & cabbage dumplings, ponzu dipping sauce" },
+    { "name": "Takoyaki", "price": 13, "description": "Octopus balls, bonito flakes, mayo, okonomiyaki sauce" },
+    { "name": "Crispy Rice", "price": 16, "description": "Seared crispy rice topped with spicy tuna & avocado", "spicy": true },
+    { "name": "Miso Soup", "price": 5, "description": "Traditional dashi, tofu, wakame, green onion" },
+    { "name": "Seaweed Salad", "price": 9, "description": "Marinated wakame, sesame seeds, rice vinegar dressing" }
+  ]
+}

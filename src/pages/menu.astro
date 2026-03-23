@@ -1,0 +1,357 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import MenuSection from '../components/MenuSection.astro';
+import MenuItem from '../components/MenuItem.astro';
+import foodMenu from '../data/food-menu.json';
+import drinkMenu from '../data/drink-menu.json';
+
+const menuHeroImage = 'https://lh3.googleusercontent.com/aida-public/AB6AXuD3-PzXPFDHrK-7sIXHPslX_jyh8gOUOTJ3qdph3mspni6ZujaRcd6mzRVSK7Ch13wghDqXjpOQGzQaDuRCN_ATzrycr4OHX2BtadiF9sWuCIlAABYVPPz0D93Oyb1Vd3LXb0XJfV4EDrveKkkitZHqb-JE7Y-rjLiG_f3R-Z6Sjr9vvWzAtiOSjnunbjPBkmXLogynr9pz_W8yUmNbSqN28bxqyi9MN3Str25fzZYH6nGR4kVDw4hfY4fc2NGdnMTpQbTXtKnCqYz6';
+const chefImage = 'https://lh3.googleusercontent.com/aida-public/AB6AXuDu5dJq57GSxxPumrTv4VrmGH22OI2X-csNFbogeU138CAXDtbOPx1-lq15h8z4j5pWZvZhZi2Gv8Hi9cmcF4Czo_COFn3T31rlnMToAZObhelSnHbSe5_950UrYgmnfC-arMdPDqk9oolkZQR0BPdNqFA0ZV0-vRf4Iwc2rKjuTfhg8rZRUbRTiw-Npzr-3aW-GNQ7merD2iMXE6gPyZ5wjAvPka-NKB0gJHYgn26FPOPrY9S0twZhLlrZXr372XpF0WAYmLtDgjCH';
+const slidersImage = 'https://lh3.googleusercontent.com/aida-public/AB6AXuDqc03tOLqXYLAiA12OUL6nFOtB6zmkqE_HBJnVKo59ITpY7N5V6yXf8UfUpsVorsjIVnfnIV6QzyAxqbFLhpooDhzBMV60TwnBDhmjAMRyGLHRhWC3kofQ032kazIN1Sv2CjbIq1eN1oof7N9KHWi5-AOCjA_cC1clI6K1o1n3yeiyLsVVwkaLOWfuiHV6CNajb5Exr4RveoXD8Lf1S4dVieHTb9nFz1wN44JA0RgJGgdPv8puwprrASUS-ofgLFbq5Ghm4kASTT03';
+---
+
+<Layout title="Menu | On A Roll Sushi & Sliders">
+  <Nav />
+
+  <!-- ===== HERO ===== -->
+  <section class="relative h-[70vh] flex items-end overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src={menuHeroImage}
+        alt="On A Roll menu hero"
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <div class="hero-scrim absolute inset-0"></div>
+    <div class="relative z-10 w-full px-8 pb-16 max-w-screen-2xl mx-auto">
+      <h1 class="font-headline font-black uppercase leading-none tracking-tighter text-on-surface" style="font-size: clamp(4rem, 12vw, 12rem);">
+        OUR <span class="italic text-primary">MENU</span>
+      </h1>
+      <p class="text-secondary font-label text-sm md:text-base tracking-[0.3em] uppercase mt-4">
+        Fresh. Bold. Unapologetic.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== STICKY TAB NAVIGATION ===== -->
+  <div id="menu-tabs" class="sticky top-0 z-40 bg-surface-container border-b border-outline-variant/30 backdrop-blur-sm">
+    <div class="max-w-screen-2xl mx-auto px-8">
+      <nav class="flex gap-0 overflow-x-auto scrollbar-hide">
+        {[
+          { href: '#sushi', label: 'Sushi' },
+          { href: '#sliders', label: 'Sliders' },
+          { href: '#appetizers', label: 'Appetizers' },
+          { href: '#cocktails', label: 'Cocktails' },
+          { href: '#wine-beer', label: 'Wine & Beer' },
+        ].map(({ href, label }) => (
+          <a
+            href={href}
+            data-tab={href.slice(1)}
+            class="menu-tab px-6 py-5 text-xs font-headline font-bold uppercase tracking-[0.2em] text-secondary border-b-2 border-transparent hover:text-on-surface hover:border-primary transition-all duration-200 whitespace-nowrap"
+          >
+            {label}
+          </a>
+        ))}
+      </nav>
+    </div>
+  </div>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="max-w-screen-2xl mx-auto px-8 py-32 space-y-40">
+
+    <!-- ===== SUSHI SECTION ===== -->
+    <div id="sushi" class="space-y-32">
+
+      <!-- Specialty Rolls -->
+      <MenuSection
+        sectionId="specialty-rolls"
+        label="01"
+        title="Specialty Rolls"
+        description="Crafted by our kitchen team, each roll is a study in contrast — texture, temperature, heat."
+        imageSrc={chefImage}
+        imageAlt="Chef preparing specialty rolls"
+        items={foodMenu.specialtyRolls}
+      />
+
+      <!-- Veggie Rolls -->
+      <div class="space-y-8">
+        <div class="flex items-center gap-6">
+          <span class="text-primary uppercase tracking-[0.3em] font-bold text-xs">02</span>
+          <h3 class="text-3xl font-headline font-black uppercase leading-none">Veggie Rolls</h3>
+          <div class="flex-1 h-[1px] bg-outline-variant/30"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {foodMenu.veggieRolls.map((item) => (
+            <MenuItem
+              name={item.name}
+              price={item.price}
+              description={item.description}
+              spicy={item.spicy}
+            />
+          ))}
+        </div>
+      </div>
+
+      <!-- Small Rolls -->
+      <div class="space-y-8">
+        <div class="flex items-center gap-6">
+          <span class="text-primary uppercase tracking-[0.3em] font-bold text-xs">03</span>
+          <h3 class="text-3xl font-headline font-black uppercase leading-none">Small Rolls</h3>
+          <div class="flex-1 h-[1px] bg-outline-variant/30"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {foodMenu.smallRolls.map((item) => (
+            <MenuItem
+              name={item.name}
+              price={item.price}
+              description={item.description}
+              spicy={item.spicy}
+            />
+          ))}
+        </div>
+      </div>
+
+      <!-- Nigiri -->
+      <div class="space-y-8">
+        <div class="flex items-center gap-6">
+          <span class="text-primary uppercase tracking-[0.3em] font-bold text-xs">04</span>
+          <h3 class="text-3xl font-headline font-black uppercase leading-none">Nigiri</h3>
+          <div class="flex-1 h-[1px] bg-outline-variant/30"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {foodMenu.nigiri.map((item) => (
+            <MenuItem
+              name={item.name}
+              price={item.price}
+              description={item.description}
+            />
+          ))}
+        </div>
+      </div>
+
+      <!-- Sashimi -->
+      <div class="space-y-8">
+        <div class="flex items-center gap-6">
+          <span class="text-primary uppercase tracking-[0.3em] font-bold text-xs">05</span>
+          <h3 class="text-3xl font-headline font-black uppercase leading-none">Sashimi</h3>
+          <div class="flex-1 h-[1px] bg-outline-variant/30"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {foodMenu.sashimi.map((item) => (
+            <MenuItem
+              name={item.name}
+              price={item.price}
+              description={item.description}
+            />
+          ))}
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===== SLIDERS SECTION ===== -->
+    <div id="sliders">
+      <MenuSection
+        sectionId="sliders-items"
+        label="06"
+        title="Sliders"
+        subtitle="$6 each or 3 for $15"
+        description="Small format. Big flavour. Mix and match — that's the whole point."
+        imageSrc={slidersImage}
+        imageAlt="On A Roll sliders"
+        items={foodMenu.sliders}
+      />
+    </div>
+
+    <!-- ===== APPETIZERS SECTION ===== -->
+    <div id="appetizers" class="space-y-8">
+      <div class="flex items-center gap-6">
+        <span class="text-primary uppercase tracking-[0.3em] font-bold text-xs">07</span>
+        <h2 class="text-5xl font-headline font-black uppercase leading-none">Appetizers</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 pt-8">
+        {foodMenu.appetizers.map((item) => (
+          <MenuItem
+            name={item.name}
+            price={item.price}
+            description={item.description}
+            spicy={item.spicy}
+          />
+        ))}
+      </div>
+    </div>
+
+    <!-- ===== COCKTAILS SECTION ===== -->
+    <div id="cocktails" class="bg-surface-container-low px-12 py-20">
+      <div class="max-w-2xl mx-auto text-center space-y-4 mb-16">
+        <span class="text-primary uppercase tracking-[0.3em] font-bold text-xs">08</span>
+        <h2 class="text-5xl font-headline font-black uppercase leading-none">Cocktails</h2>
+        <p class="text-secondary font-light tracking-wide">Liquid Vinyl — drinks inspired by the records we love.</p>
+      </div>
+
+      <div class="max-w-3xl mx-auto divide-y divide-outline-variant/30">
+        {drinkMenu.cocktails.map((item) => (
+          <div class="py-10">
+            <MenuItem
+              name={item.name}
+              price={item.price}
+              description={item.description}
+              spicy={item.spicy}
+              note={item.note}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- ===== WINE & BEER SECTION ===== -->
+    <div id="wine-beer" class="space-y-20">
+      <div class="flex items-center gap-6">
+        <span class="text-primary uppercase tracking-[0.3em] font-bold text-xs">09</span>
+        <h2 class="text-5xl font-headline font-black uppercase leading-none">Wine &amp; Beer</h2>
+      </div>
+
+      <!-- White Wine -->
+      <div class="space-y-8">
+        <div class="flex items-center gap-6">
+          <h3 class="text-2xl font-headline font-bold uppercase tracking-wide text-on-surface-variant">White Wine</h3>
+          <div class="flex-1 h-[1px] bg-outline-variant/30"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {drinkMenu.whiteWine.map((item) => (
+            <MenuItem name={item.name} price={item.price} description={item.description} />
+          ))}
+        </div>
+      </div>
+
+      <!-- Red Wine -->
+      <div class="space-y-8">
+        <div class="flex items-center gap-6">
+          <h3 class="text-2xl font-headline font-bold uppercase tracking-wide text-on-surface-variant">Red Wine</h3>
+          <div class="flex-1 h-[1px] bg-outline-variant/30"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {drinkMenu.redWine.map((item) => (
+            <MenuItem name={item.name} price={item.price} description={item.description} />
+          ))}
+        </div>
+      </div>
+
+      <!-- Wine By The Bottle -->
+      <div class="space-y-8">
+        <div class="flex items-center gap-6">
+          <h3 class="text-2xl font-headline font-bold uppercase tracking-wide text-on-surface-variant">Wine By The Bottle</h3>
+          <div class="flex-1 h-[1px] bg-outline-variant/30"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {drinkMenu.wineByBottle.map((item) => (
+            <MenuItem name={item.name} price={item.price} description={item.description} />
+          ))}
+        </div>
+      </div>
+
+      <!-- Sake -->
+      <div class="space-y-8">
+        <div class="flex items-center gap-6">
+          <h3 class="text-2xl font-headline font-bold uppercase tracking-wide text-on-surface-variant">Sake</h3>
+          <div class="flex-1 h-[1px] bg-outline-variant/30"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {drinkMenu.sake.map((item) => (
+            <MenuItem name={item.name} price={item.price} description={item.description} />
+          ))}
+        </div>
+      </div>
+
+      <!-- Premium Bottles -->
+      <div class="space-y-8">
+        <div class="flex items-center gap-6">
+          <h3 class="text-2xl font-headline font-bold uppercase tracking-wide text-on-surface-variant">Premium Bottles</h3>
+          <div class="flex-1 h-[1px] bg-outline-variant/30"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {drinkMenu.premiumBottles.map((item) => (
+            <MenuItem name={item.name} price={item.price} />
+          ))}
+        </div>
+      </div>
+
+      <!-- Domestic Bottles -->
+      <div class="space-y-8">
+        <div class="flex items-center gap-6">
+          <h3 class="text-2xl font-headline font-bold uppercase tracking-wide text-on-surface-variant">Domestic Bottles</h3>
+          <div class="flex-1 h-[1px] bg-outline-variant/30"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {drinkMenu.domesticBottles.map((item) => (
+            <MenuItem name={item.name} price={item.price} />
+          ))}
+        </div>
+      </div>
+
+      <!-- On Tap -->
+      <div class="space-y-8">
+        <div class="flex items-center gap-6">
+          <h3 class="text-2xl font-headline font-bold uppercase tracking-wide text-on-surface-variant">On Tap</h3>
+          <div class="flex-1 h-[1px] bg-outline-variant/30"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {drinkMenu.onTap.map((item) => (
+            <MenuItem name={item.name} price={item.price} description={item.description} />
+          ))}
+        </div>
+      </div>
+
+      <!-- Tall Cans -->
+      <div class="space-y-8">
+        <div class="flex items-center gap-6">
+          <h3 class="text-2xl font-headline font-bold uppercase tracking-wide text-on-surface-variant">Tall Cans</h3>
+          <div class="flex-1 h-[1px] bg-outline-variant/30"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {drinkMenu.tallCans.map((item) => (
+            <MenuItem name={item.name} price={item.price} description={item.description} />
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  // Sticky tab active state via IntersectionObserver
+  const sections = ['sushi', 'sliders', 'appetizers', 'cocktails', 'wine-beer'];
+  const tabs = document.querySelectorAll<HTMLElement>('.menu-tab');
+
+  const setActiveTab = (id: string) => {
+    tabs.forEach((tab) => {
+      const isActive = tab.dataset.tab === id;
+      tab.classList.toggle('text-primary', isActive);
+      tab.classList.toggle('border-primary', isActive);
+      tab.classList.toggle('text-secondary', !isActive);
+      tab.classList.toggle('border-transparent', !isActive);
+    });
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          setActiveTab(entry.target.id);
+          break;
+        }
+      }
+    },
+    { rootMargin: '-20% 0px -70% 0px', threshold: 0 }
+  );
+
+  sections.forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+</script>
