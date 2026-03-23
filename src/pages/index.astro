@@ -3,376 +3,225 @@ import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import siteInfo from '../data/site-info.json';
-
-// Image URLs from Appendix B
-const images = {
-  hero: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCb36S_VgOJ4GGlIYvM5dtHoimthO6OD56lSTWxK-9DOlqF29ETNi4H-ed32jzczT4baZYgDj8Be5lFnx7rWuFwHD9BLqeVNoLwpfDMBklVXUKUujS9w1WbLdDEBguRT4mdUVsLdEQ2fNv5-N_j_p65WH04xuNMZt_LYGQwJGuQdRpp85n42IDqJ-gpNlyTRihc7zZYiEcSNmMwUsnnKGmC46w0dQjEbWVtzF1UYryDjpLGZ4G9JiiaxYQQRsS0323s_Y656iqBj3ab',
-  pillars: {
-    sushi: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD3-PzXPFDHrK-7sIXHPslX_jyh8gOUOTJ3qdph3mspni6ZujaRcd6mzRVSK7Ch13wghDqXjpOQGzQaDuRCN_ATzrycr4OHX2BtadiF9sWuCIlAABYVPPz0D93Oyb1Vd3LXb0XJfV4EDrveKkkitZHqb-JE7Y-rjLiG_f3R-Z6Sjr9vvWzAtiOSjnunbjPBkmXLogynr9pz_W8yUmNbSqN28bxqyi9MN3Str25fzZYH6nGR4kVDw4hfY4fc2NGdnMTpQbTXtKnCqYz6',
-    sliders: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDqc03tOLqXYLAiA12OUL6nFOtB6zmkqE_HBJnVKo59ITpY7N5V6yXf8UfUpsVorsjIVnfnIV6QzyAxqbFLhpooDhzBMV60TwnBDhmjAMRyGLHRhWC3kofQ032kazIN1Sv2CjbIq1eN1oof7N9KHWi5-AOCjA_cC1clI6K1o1n3yeiyLsVVwkaLOWfuiHV6CNajb5Exr4RveoXD8Lf1S4dVieHTb9nFz1wN44JA0RgJGgdPv8puwprrASUS-ofgLFbq5Ghm4kASTT03',
-    cocktails: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDu5dJq57GSxxPumrTv4VrmGH22OI2X-csNFbogeU138CAXDtbOPx1-lq15h8z4j5pWZvZhZi2Gv8Hi9cmcF4Czo_COFn3T31rlnMToAZObhelSnHbSe5_950UrYgmnfC-arMdPDqk9oolkZQR0BPdNqFA0ZV0-vRf4Iwc2rKjuTfhg8rZRUbRTiw-Npzr-3aW-GNQ7merD2iMXE6gPyZ5wjAvPka-NKB0gJHYgn26FPOPrY9S0twZhLlrZXr372XpF0WAYmLtDgjCH',
-  },
-  about: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD6dbkO0YIlSQ2GdbyRBufDCyT7ND7guuxsvJcOShk0q_IIi4n3FnZ02kW04wNudnGWcQW0ch1adLVCVqI0eXlKpP3kBS4s5Gde0oTDif6ouih29mvw14qtfMOy5lSijME3Rh_wS8r6hv_oCU1RIKtHJSQeXKbg-t4Ka3BWHvVpFO5o6Bzst8UO0WgGtWQuq4V6Vr5iadsv9Uw0DJQLcwIEVEG6a_YE5PDFFsKFhJzluId9F8c6HPYCKghMI9hENsEtFb2rIzLS3gC-',
-  dishes: {
-    dish1: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC3qF1DeOVdr1Yn490tthq1MScxDF1ZCaZhhVvDg9YYWtX6Qb4k2SkBm8NjcUSmqj1-Ivq42NeBRSf2Zb1LFIFzndlgfwoW_AP7B99KZGDpasqhnyjwMHLkQfukj16H8s10TFwW-d7i0LM1etZR1oFsBmen5t_dzJsTcwR-Z4cCp4FITy0ESQ1L_LpoyQ_FPFL2f_slWfbjbWU_8mCrtLM7egvRuLvm8AjCD7ZrRRtOF_rVS07-0YXkg1PMM403rUVw-Kz0OwJuhe2I',
-    dish2: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBWQ05ChWHP2K4_JIl8P-9jDHM2T96BbbFnesW-ABPu2z39teMG0mTrTfhzmEZs5eiHrtrnpmyERou4-7cYQsqgHN2utQp7aPn0hWm4mub-tjy-JOkxI3F458QSJTGSzEVz6m3ViGDuaNqGUU0Mom4aEZgLx32T6cNn61rfw4oEqhYaFRXl8Blcq1UVjAVPvwF7nH3pVmCo14BQ5wMNhqLbC6I7bk-zjq1Yi0IMXzv3VIJnw7yk58eQvyfjsMa2BoMWiffXn5jHdoRq',
-  },
-  gallery: [
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuD9d14DPjk4kKN8gP3VNYxnwQNipb72bxfKjPvjARlRMSJi26UGJifwUZRoug4-w3VFRzp-5hdgg1c9b6LH-JpgIJp8PsL_Cc_DbuFUnVv5fhwx2PVO5HV5KliL_xAhRRRuJ9KAIHs4iYzEMQntxB8H6MtZwVh1TZRr6gIqTkdGTiDEakrXNphrDI4B34LlILSEherGzMkiQ4Qwuwc4zuYjvMmHXBcG49bBNiH6pN0WJ1Nv-5Tc3M8TwkWy-X2aCzNsgyxba9-7sG5E',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuB5OgtzS14pmtNyl8lJ9STok8rNFkJfy-FxKSDdWii6wuY_i2iIjWe1J7O_ecJwhlKoor_7o7cmtrtWr-FUBXM2u4NxhpfWWuzsb_PJ-RD_KXXNJ9cFDj5zT6cVsG3Roxm_5RGcQv20ibil5yJafGy8Zxm18z9l9NKH0UXMp2EEHUePZokjqErW28d8gMOHpscaxYAttT75rNKtb8Qm78R5H6XhzHqsauoVq8sgv9KONnQ559O8sOBpZFW7DsmFAF0RlNv3lOAzPoLT',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuAPcwAfJWzk8QsIdMD7MuhtVWzAKsVAHSPlrx8atP57H1-ubnGIEBN6tjWXSFnndgHJdp9eZG-UNgXgX12A9GN1GMd-iNLRGQBypLHXjVMqahATCu_QVysirvEeCPboldf1rhRsW1Pc6qqWLO5m3bV_uhWifIfMHoQwTCv-dAogmi8UU7uLQSLz-vyjPGPpZP8mSx6Xi4-MOI9dIdd7cdGkgikSqfeRKIH0V8jWb9rV7zFmgVmt_4E-S60AmzofGb6oVhNAkRieBqyL',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuBhG-wHf0xIMiz7wjPmDuTz-kOskheVos0hqYG4E2f1RLdmfBuJ2F3aTNIQjv1QlHth5KFazwLfShKf7Y3217mONB7P1V0-Y0Ui4zDWRNiAyefpuEq5pY2e-ht2dBDliQZuoxYucE9n071-dt8TcEy9NJmNzLjysZhuIaw4FbtpARVZwtZUmFbzsyG7aK79GCfI_9Vmp1mRUPA9X4jacjxhSv5A_06WSA87WoDq6CXYzo92NX4MU8W_ObQBPgWvOo4mhINNwKedSgj4',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuBuMjMnBtEmh7LRZDe1Kkzu3Xsr04UaxmSoQby6oA0M1m8s99RAHj4h2F2WwjGsrLccSUCcegnV0h9JcKc-Ri2Q4Emlg5iSUxBvhpWIn2ByGBauEcPhic6vpD-BUVaWnTTQzIgv1sQJ7HDuGW23vz-xqFT0HCn3lnOKpepPhlUHnR02RDzkhy3xkpcFXZWmThDsGy87-48dLDiFYEBGFYUqMG4M_2kBJY_LH-BKLtedG3hIjVM36mX3AvZohwBj5PErCYx58h3C2hiE',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuDBYRVzbdSyo0kp9kHXPmGeD1KZGWntGmfdMklKB8C2Jll7j04YKacGNr8m6_g6dIFK5fJIEYrnhhqzID3dMJKOxKusqmD51OTScuH2BOGJ6wGRrxHLRt0P4216R6KdCKoSLPaRRO-0PvuyH7VNEl0TmkghHE5-Lwd7oQ23jYOd8ySCzT2snm91Mko5M4_GrvRhkG8Q_3DYlK0ggI0eb9exO6PSQ1moOJWFGA_lkq9TxALFfxm8OpM1B_1_qKbQ-4JACq45orxYOIm4',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuAYceUBfFFbb3cbqRWFM23BjTVn_-wAjPzfHFxsYYqcTpChQql_afuNWGDynd-QwyQeOdBY4cJv0nleZYuHERB0ozz-BS61hrbp_wnfDRRbRH7r7UAtDaH0CfeE_j8XZdL2rnAvEDB3qzI8WaO951hfBSBcieD1hz4CImB-ioZzK_pOvZqTxXL85BKjXb4KVcXHlx0mpdalHcZn4z7CVdB-v0uNySydo7lJeHM25haEWOPTPqjlszkvaqUhYm3KusocCZ1W_rWoCxqk',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuBuZtdHFbttv3HRjb2Ci-rBT4033gsBCtERuy5SYo1CBHNBy_UhSycrYVtp5NTQ2wCi7oQj1RMVPeIaMIJS06Oo1BqDSW9HRDHFeyaozt9vGDvsxtwmwtoc_cU1UjMyVdY9q-pCm9x0-gekhsdJEMI1U75fr8iQ-Z7rTRhBxiw_YWGKUqwpfCfceSdCyk_3mOjyXnH_KTIephzq9fh0D5TxBayeDhg5jtcq_U-CLLTsCcYltouf6PuLcEXtbl0Q5762qWXz4xifZnZT',
-  ],
-  liveActs: {
-    img1: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBrUeKdh7Jp35r5NUWVw1Z37MdA_atCMMHbrnMlvEJZHwGGYR3myXoSRrcl6QpJ-CXu_vA16AR6OxM6lJcJNmKL52ZAjaXKnKGriHTYlAC_Nd2LG3FTgJTYi0SBHf5RpyMtWragm8vtZEWs5DNk01n-v3AlW_WlFibPlnBeV26tWL1YVP2CTDZdCDJJVUnkTrVyRbkQb7sNz_u-IFjVe6bwJtTyL07VijVNhG2t_oAKszFv_bNmh-Vur1qEMvVvGAKCzNeecT8Fbaai',
-    img2: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDM69gNe0qNqHacvTEHOuQnHQw3flDZNRzTYUaPRWfO6VPgcCax8GTjTlWInh8wdFEMBOMfj6Ec70nit7BP5F6xUOY39_ifAMPAM-nWX6pZBF9Bi_NeT1c8KQG00dTNbzP0qZjkwWZvt1yy67__oSVPVbyB2BoZjycAIDH5j3Q4CLAmgRLPmkLQcuHw5lx45JL6WgquX7_Wn6rPuk5o8-vg9DrIkNHstvADzZiiPZrztGFN2LKg4nnlVCuafc8LJOuJ1RYvmMg6kAhZ',
-  },
-};
 ---
 
 <Layout title="On A Roll Sushi & Sliders | Windsor, ON">
   <Nav />
-
-  <!-- ===== SECTION 1: HERO ===== -->
-  <section class="relative h-[90vh] flex items-end overflow-hidden">
-    <!-- Background Image -->
-    <div class="absolute inset-0">
-      <img
-        src={images.hero}
-        alt="On A Roll restaurant interior"
-        class="w-full h-full object-cover"
-      />
-    </div>
-    <!-- Cinematic Gradient Overlay -->
-    <div class="cinematic-gradient absolute inset-0"></div>
-
-    <!-- Hero Content -->
-    <div class="relative z-10 w-full px-4 md:px-8 pb-16 max-w-screen-2xl mx-auto">
-      <h1 class="font-headline font-black uppercase leading-none tracking-tighter text-on-surface" style="font-size: clamp(4rem, 14vw, 14rem);">
-        ON <span class="italic text-primary">A</span> ROLL
-      </h1>
-      <p class="text-secondary font-label text-sm md:text-base tracking-[0.3em] uppercase mt-4 mb-8">{siteInfo.tagline}</p>
-      <div class="flex items-center gap-6 flex-wrap">
-        <a
-          href={siteInfo.orderOnline}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="bg-primary text-on-primary px-10 py-4 font-headline font-bold uppercase tracking-widest text-sm hover:scale-95 transition-transform duration-200"
-        >
-          Order Now
-        </a>
-        <div class="flex-1 h-[1px] bg-outline-variant/50 hidden md:block"></div>
-        <span class="text-secondary font-headline font-black uppercase tracking-[0.5em] text-sm">Sushi &amp; Sliders</span>
+  <main>
+    <!-- Section 1: Hero -->
+    <section class="relative h-[90vh] w-full flex items-center overflow-hidden bg-surface-container-lowest">
+      <div class="absolute inset-0 z-0">
+        <img alt="Close-up of premium sushi" class="w-full h-full object-cover opacity-80 scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb36S_VgOJ4GGlIYvM5dtHoimthO6OD56lSTWxK-9DOlqF29ETNi4H-ed32jzczT4baZYgDj8Be5lFnx7rWuFwHD9BLqeVNoLwpfDMBklVXUKUujS9w1WbLdDEBguRT4mdUVsLdEQ2fNv5-N_j_p65WH04xuNMZt_LYGQwJGuQdRpp85n42IDqJ-gpNlyTRihc7zZYiEcSNmMwUsnnKGmC46w0dQjEbWVtzF1UYryDjpLGZ4G9JiiaxYQQRsS0323s_Y656iqBj3ab" />
+        <div class="absolute inset-0 cinematic-gradient"></div>
       </div>
-    </div>
-  </section>
-
-  <!-- ===== SECTION 2: THREE PILLARS ===== -->
-  <section class="py-32 px-4 md:px-8 max-w-screen-2xl mx-auto animate-on-scroll">
-    <div class="grid grid-cols-12 gap-8">
-
-      <!-- Pillar 01: Specialty Rolls — spans 7 cols -->
-      <div class="col-span-12 lg:col-span-7 space-y-6">
-        <span class="text-primary uppercase tracking-[0.3em] font-bold text-xs">01</span>
-        <h2 class="text-5xl font-headline font-black uppercase leading-none">Specialty Rolls</h2>
-        <p class="text-secondary font-light leading-relaxed max-w-md">
-          Crafted with precision. Each roll is a canvas — layers of flavor, texture, and technique built from the finest ingredients.
-        </p>
-        <div class="aspect-video w-full overflow-hidden bg-surface-container-low">
-          <img
-            src={images.pillars.sushi}
-            alt="Specialty sushi rolls"
-            class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-          />
-        </div>
-      </div>
-
-      <!-- Pillar 02: Fusion Sliders — spans 5 cols, offset down -->
-      <div class="col-span-12 lg:col-span-5 space-y-6 lg:pt-24">
-        <span class="text-primary uppercase tracking-[0.3em] font-bold text-xs">02</span>
-        <h2 class="text-5xl font-headline font-black uppercase leading-none">Fusion Sliders</h2>
-        <p class="text-secondary font-light leading-relaxed max-w-md">
-          Where East meets West on a brioche bun. Bold fillings, unexpected combinations, unforgettable bites.
-        </p>
-        <div class="aspect-[4/5] w-full overflow-hidden bg-surface-container-low">
-          <img
-            src={images.pillars.sliders}
-            alt="Fusion sliders"
-            class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-          />
-        </div>
-      </div>
-
-      <!-- Pillar 03: Liquid Vinyl — spans 8 cols centered -->
-      <div class="col-span-12 lg:col-span-8 lg:col-start-3 space-y-6 mt-8">
-        <span class="text-primary uppercase tracking-[0.3em] font-bold text-xs">03</span>
-        <h2 class="text-5xl font-headline font-black uppercase leading-none">Liquid Vinyl</h2>
-        <p class="text-secondary font-light leading-relaxed max-w-md">
-          Cocktails engineered like music — rhythm, harmony, and a drop of surprise. Our bar program sets the mood.
-        </p>
-        <div class="aspect-[21/9] w-full overflow-hidden bg-surface-container-low">
-          <img
-            src={images.pillars.cocktails}
-            alt="Craft cocktails"
-            class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-          />
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===== SECTION 3: ABOUT PREVIEW ===== -->
-  <section class="bg-surface-container-low py-32 animate-on-scroll">
-    <div class="px-4 md:px-8 max-w-screen-2xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-
-        <!-- Text side — 5 cols -->
-        <div class="lg:col-span-5 space-y-10">
-          <span class="text-primary uppercase tracking-[0.3em] font-bold text-xs">Our Story</span>
-          <h2 class="text-6xl md:text-7xl font-headline font-black uppercase leading-none">
-            WE ARE<br/>ON A<br/>ROLL
-          </h2>
-          <p class="text-secondary font-light leading-relaxed max-w-md">
-            Born in Windsor in 2017, On A Roll is more than a restaurant — it's a vibe. We took two things nobody thought to combine — premium sushi and gourmet sliders — and made them inseparable. Add live music, handcrafted cocktails, and a room that pulses with energy, and you have something the city had never seen before.
+      <div class="relative z-10 w-full max-w-screen-2xl mx-auto px-8">
+        <div class="max-w-4xl">
+          <h1 class="font-headline text-[12vw] md:text-[8rem] leading-[0.85] font-black tracking-tighter text-on-surface mb-8">
+            ON <span class="text-primary italic text-glow">A</span> ROLL
+          </h1>
+          <p class="font-body text-xl md:text-2xl text-secondary mb-12 max-w-2xl font-light tracking-wide leading-relaxed">
+            Good Food. Good Music. Good People. Good Vibes.
           </p>
-          <a
-            href="/about"
-            class="inline-flex items-center gap-3 text-primary font-headline font-bold uppercase tracking-widest text-sm hover:gap-6 transition-all duration-300"
-          >
-            Learn Our Story
-            <span class="material-symbols-outlined text-base">arrow_forward</span>
-          </a>
-        </div>
-
-        <!-- Image side — 7 cols with floating stats card -->
-        <div class="lg:col-span-7 relative">
-          <div class="aspect-[4/3] w-full overflow-hidden bg-surface-container">
-            <img
-              src={images.about}
-              alt="On A Roll restaurant interior"
-              class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-700"
-            />
-          </div>
-          <!-- Floating Stats Card -->
-          <div class="absolute bottom-0 left-0 translate-y-1/2 lg:-translate-x-4 bg-surface-container-lowest p-8 space-y-1 min-w-[160px]">
-            <p class="text-6xl font-headline font-black text-primary leading-none">120+</p>
-            <p class="text-xs font-label uppercase tracking-[0.3em] text-secondary">Unique Menu Items</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SECTION 4: SIGNATURE DISHES ===== -->
-  <section class="py-32 animate-on-scroll">
-    <div class="px-4 md:px-8 max-w-screen-2xl mx-auto mb-16">
-      <span class="text-primary uppercase tracking-[0.3em] font-bold text-xs">Featured</span>
-      <h2 class="text-5xl font-headline font-black uppercase leading-none mt-4">Signature Dishes</h2>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-[1px] bg-outline-variant/20">
-
-      <!-- Dish 1: Rocky Raccoon -->
-      <div class="group bg-surface hover:bg-surface-container transition-colors duration-300 p-0 cursor-pointer">
-        <div class="aspect-square w-full overflow-hidden">
-          <img
-            src={images.dishes.dish1}
-            alt="Rocky Raccoon roll"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-          />
-        </div>
-        <div class="p-8 space-y-3">
-          <div class="flex items-end justify-between">
-            <h3 class="text-3xl font-headline font-black uppercase tracking-tight group-hover:text-primary transition-colors">Rocky Raccoon</h3>
-            <span class="text-2xl font-headline font-medium text-primary ml-4">$19</span>
-          </div>
-          <p class="text-secondary font-light leading-relaxed">Crab tempura, cucumber, topped with eel & avocado. Our most beloved signature roll.</p>
-        </div>
-      </div>
-
-      <!-- Dish 2: Voodoo Child Slider -->
-      <div class="group bg-surface hover:bg-surface-container transition-colors duration-300 p-0 cursor-pointer">
-        <div class="aspect-square w-full overflow-hidden">
-          <img
-            src={images.dishes.dish2}
-            alt="Voodoo Child slider"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-          />
-        </div>
-        <div class="p-8 space-y-3">
-          <div class="flex items-end justify-between">
-            <h3 class="text-3xl font-headline font-black uppercase tracking-tight group-hover:text-primary transition-colors">Voodoo Child</h3>
-            <span class="text-2xl font-headline font-medium text-primary ml-4">$20</span>
-          </div>
-          <p class="text-secondary font-light leading-relaxed">Tempura soft shell crab, cucumber. A cult classic that defies expectation.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===== SECTION 5: GALLERY ===== -->
-  <section class="py-32 bg-surface-container-low animate-on-scroll">
-    <div class="px-4 md:px-8 max-w-screen-2xl mx-auto mb-16">
-      <span class="text-primary uppercase tracking-[0.3em] font-bold text-xs">Gallery</span>
-      <h2 class="text-5xl font-headline font-black uppercase leading-none mt-4">The Experience</h2>
-    </div>
-    <div class="px-4 md:px-8 max-w-screen-2xl mx-auto">
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-
-        <!-- Column 1: normal -->
-        <div class="space-y-4">
-          <div class="overflow-hidden">
-            <img src={images.gallery[0]} alt="Gallery image 1" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />
-          </div>
-          <div class="overflow-hidden">
-            <img src={images.gallery[1]} alt="Gallery image 2" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />
-          </div>
-        </div>
-
-        <!-- Column 2: offset down (pt-24 on md+) -->
-        <div class="space-y-4 md:pt-24">
-          <div class="overflow-hidden">
-            <img src={images.gallery[2]} alt="Gallery image 3" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />
-          </div>
-          <div class="overflow-hidden">
-            <img src={images.gallery[3]} alt="Gallery image 4" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />
-          </div>
-        </div>
-
-        <!-- Column 3: normal -->
-        <div class="space-y-4">
-          <div class="overflow-hidden">
-            <img src={images.gallery[4]} alt="Gallery image 5" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />
-          </div>
-          <div class="overflow-hidden">
-            <img src={images.gallery[5]} alt="Gallery image 6" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />
-          </div>
-        </div>
-
-        <!-- Column 4: offset down (pt-16 on md+) -->
-        <div class="space-y-4 md:pt-16">
-          <div class="overflow-hidden">
-            <img src={images.gallery[6]} alt="Gallery image 7" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />
-          </div>
-          <div class="overflow-hidden">
-            <img src={images.gallery[7]} alt="Gallery image 8" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SECTION 6: LIVE ACTS ===== -->
-  <section class="py-32 animate-on-scroll">
-    <div class="px-4 md:px-8 max-w-screen-2xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-
-        <!-- Left: Event Listings -->
-        <div class="space-y-12">
-          <div>
-            <span class="text-primary uppercase tracking-[0.3em] font-bold text-xs">Live Music</span>
-            <h2 class="text-5xl font-headline font-black uppercase leading-none mt-4">Live Acts</h2>
-            <p class="text-secondary font-light leading-relaxed max-w-md mt-6">
-              Music is the second ingredient. Every weekend, local and touring artists take the stage to transform dinner into an event.
-            </p>
-          </div>
-
-          <div class="space-y-8">
-            <!-- Event 1 -->
-            <div class="border-l-2 border-primary pl-6 space-y-1">
-              <p class="text-primary font-headline font-black uppercase tracking-widest text-xs">Friday Nights</p>
-              <p class="text-2xl font-headline font-bold uppercase">Live Music Every Weekend</p>
-              <p class="text-secondary font-light text-sm">Local artists and rising stars bring the heat every Friday night.</p>
-            </div>
-
-            <!-- Event 2 -->
-            <div class="border-l-2 border-primary pl-6 space-y-1">
-              <p class="text-primary font-headline font-black uppercase tracking-widest text-xs">Saturday Sessions</p>
-              <p class="text-2xl font-headline font-bold uppercase">Weekend DJs &amp; Artists</p>
-              <p class="text-secondary font-light text-sm">Curated sets from Windsor's best DJs and touring performers.</p>
-            </div>
-
-            <!-- Event 3 -->
-            <div class="border-l-2 border-primary pl-6 space-y-1">
-              <p class="text-primary font-headline font-black uppercase tracking-widest text-xs">Special Events</p>
-              <p class="text-2xl font-headline font-bold uppercase">Private &amp; Exclusive Nights</p>
-              <p class="text-secondary font-light text-sm">Follow us on social for special events, themed nights, and surprises.</p>
-            </div>
-          </div>
-
-          <div class="flex gap-4">
-            <a
-              href={siteInfo.social.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="border border-outline-variant text-secondary hover:border-primary hover:text-primary transition-colors px-6 py-3 font-label text-xs uppercase tracking-widest"
-            >
-              Facebook
+          <div class="flex items-center gap-8">
+            <a href={siteInfo.orderOnline} target="_blank" rel="noopener noreferrer" class="bg-primary text-on-primary px-12 py-5 font-headline font-bold text-lg tracking-widest hover:brightness-110 transition-all inline-block">
+              ORDER NOW
             </a>
-            <a
-              href={siteInfo.social.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="border border-outline-variant text-secondary hover:border-primary hover:text-primary transition-colors px-6 py-3 font-label text-xs uppercase tracking-widest"
-            >
-              Instagram
-            </a>
+            <div class="hidden md:block w-32 h-px bg-outline-variant"></div>
+            <span class="hidden md:block font-label text-xs tracking-[0.3em] text-secondary uppercase">The Audio-Visual Dining Experience</span>
           </div>
         </div>
-
-        <!-- Right: 2-col music photo grid with staggered translate-y -->
-        <div class="grid grid-cols-2 gap-4 items-start">
-          <div class="overflow-hidden translate-y-0">
-            <img
-              src={images.liveActs.img1}
-              alt="Live music at On A Roll"
-              class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
-            />
-          </div>
-          <div class="overflow-hidden translate-y-16">
-            <img
-              src={images.liveActs.img2}
-              alt="Live DJ performance"
-              class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
-            />
-          </div>
-        </div>
-
       </div>
-    </div>
-  </section>
-
-  <!-- CTA Banner -->
-  <section class="bg-primary py-20 text-center">
-    <div class="px-4 md:px-8 max-w-screen-2xl mx-auto">
-      <h2 class="text-4xl md:text-6xl font-headline font-black uppercase tracking-tight text-on-primary leading-none mb-8">
-        Ready to Roll?
-      </h2>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a
-          href={siteInfo.orderOnline}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="bg-on-primary text-primary px-10 py-4 font-headline font-bold uppercase tracking-widest text-sm hover:scale-95 transition-transform"
-        >
-          Order Online
-        </a>
-        <a
-          href="/menu"
-          class="border-2 border-on-primary text-on-primary px-10 py-4 font-headline font-bold uppercase tracking-widest text-sm hover:bg-on-primary hover:text-primary transition-colors"
-        >
-          View Menu
+      <!-- Integrated Skip Section -->
+      <div class="absolute bottom-0 right-0 z-20 bg-surface-container-high/40 backdrop-blur-md px-12 py-8 hidden lg:flex items-center gap-8 border-l border-t border-outline-variant/30">
+        <div class="flex flex-col">
+          <span class="font-label text-primary text-[10px] tracking-[0.4em] uppercase mb-1">Fast Track Delivery</span>
+          <h3 class="font-headline text-lg font-bold tracking-tight text-on-surface">Order via Skip The Dishes</h3>
+        </div>
+        <a class="w-12 h-12 rounded-full border border-primary flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href={siteInfo.orderOnline} target="_blank" rel="noopener noreferrer">
+          <span class="material-symbols-outlined">shopping_bag</span>
         </a>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Section 2: Three Pillars -->
+    <section class="py-24 px-8 bg-surface">
+      <div class="max-w-screen-2xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-y-12 gap-x-12 items-start">
+          <!-- Specialty Rolls -->
+          <div class="md:col-span-7 group">
+            <div class="relative overflow-hidden mb-8 aspect-[16/9]">
+              <img alt="Specialty Sushi Rolls" class="w-full h-full object-cover transition-all duration-1000 scale-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3-PzXPFDHrK-7sIXHPslX_jyh8gOUOTJ3qdph3mspni6ZujaRcd6mzRVSK7Ch13wghDqXjpOQGzQaDuRCN_ATzrycr4OHX2BtadiF9sWuCIlAABYVPPz0D93Oyb1Vd3LXb0XJfV4EDrveKkkitZHqb-JE7Y-rjLiG_f3R-Z6Sjr9vvWzAtiOSjnunbjPBkmXLogynr9pz_W8yUmNbSqN28bxqyi9MN3Str25fzZYH6nGR4kVDw4hfY4fc2NGdnMTpQbTXtKnCqYz6" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            </div>
+            <div class="flex items-baseline gap-6">
+              <span class="font-headline text-6xl font-light text-outline-variant italic">01</span>
+              <div>
+                <h3 class="font-headline text-4xl mb-3 font-bold tracking-tight">Specialty Rolls</h3>
+                <p class="text-secondary max-w-md leading-relaxed text-sm">Where traditional technique meets experimental flavor profiles. Architectural masterpieces designed for the palate.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Unique Sliders -->
+          <div class="md:col-span-5 md:mt-24 group">
+            <div class="relative overflow-hidden mb-8 aspect-[4/5]">
+              <img alt="Unique Sliders" class="w-full h-full object-cover transition-all duration-1000 scale-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqc03tOLqXYLAiA12OUL6nFOtB6zmkqE_HBJnVKo59ITpY7N5V6yXf8UfUpsVorsjIVnfnIV6QzyAxqbFLhpooDhzBMV60TwnBDhmjAMRyGLHRhWC3kofQ032kazIN1Sv2CjbIq1eN1oof7N9KHWi5-AOCjA_cC1clI6K1o1n3yeiyLsVVwkaLOWfuiHV6CNajb5Exr4RveoXD8Lf1S4dVieHTb9nFz1wN44JA0RgJGgdPv8puwprrASUS-ofgLFbq5Ghm4kASTT03" />
+            </div>
+            <div class="flex items-baseline gap-6">
+              <span class="font-headline text-6xl font-light text-outline-variant italic">02</span>
+              <div>
+                <h3 class="font-headline text-4xl mb-3 font-bold tracking-tight">Fusion Sliders</h3>
+                <p class="text-secondary leading-relaxed text-sm">Hand-crafted brioche meets premium wagyu and fusion toppings. Small bites with massive sonic impact.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Craft Cocktails -->
+          <div class="md:col-span-8 md:col-start-3 mt-12 group">
+            <div class="relative overflow-hidden mb-8 aspect-[21/9]">
+              <img alt="Craft Cocktails" class="w-full h-full object-cover transition-all duration-1000 scale-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu5dJq57GSxxPumrTv4VrmGH22OI2X-csNFbogeU138CAXDtbOPx1-lq15h8z4j5pWZvZhZi2Gv8Hi9cmcF4Czo_COFn3T31rlnMToAZObhelSnHbSe5_950UrYgmnfC-arMdPDqk9oolkZQR0BPdNqFA0ZV0-vRf4Iwc2rKjuTfhg8rZRUbRTiw-Npzr-3aW-GNQ7merD2iMXE6gPyZ5wjAvPka-NKB0gJHYgn26FPOPrY9S0twZhLlrZXr372XpF0WAYmLtDgjCH" />
+            </div>
+            <div class="flex items-baseline justify-end gap-6 text-right">
+              <div class="flex flex-col items-end">
+                <h3 class="font-headline text-4xl mb-3 font-bold tracking-tight">Liquid Vinyl</h3>
+                <p class="text-secondary max-w-md leading-relaxed text-sm">Liquid art inspired by the rhythm of the night. Infused house-made syrups and rare spirits.</p>
+              </div>
+              <span class="font-headline text-6xl font-light text-outline-variant italic">03</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: About -->
+    <section class="py-32 bg-surface-container-low overflow-hidden">
+      <div class="max-w-screen-2xl mx-auto px-8 relative">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+          <div class="md:col-span-5 z-10">
+            <span class="font-label text-primary text-xs tracking-[0.5em] uppercase mb-8 block">The Philosophy</span>
+            <h2 class="font-headline text-6xl md:text-8xl font-black tracking-tighter mb-12">WE ARE ON A ROLL</h2>
+            <div class="space-y-8 font-body text-xl text-secondary leading-relaxed font-light">
+              <p>We make specialty sushi rolls, unique sliders and craft cocktails served in a laid-back, friendly atmosphere. With more than 50 years of combined experience, we create food we're proud to serve.</p>
+              <p>Every night is a performance. Every dish is a note.</p>
+            </div>
+            <a href="/about" class="mt-16 group flex items-center gap-4 text-on-surface font-headline font-bold tracking-widest uppercase">
+              <span class="border-b-2 border-primary pb-1 group-hover:border-on-surface transition-colors">Learn Our Story</span>
+              <span class="material-symbols-outlined text-primary">north_east</span>
+            </a>
+          </div>
+          <div class="md:col-span-7 relative">
+            <div class="absolute -top-20 -left-20 w-64 h-64 bg-primary/10 blur-3xl rounded-full"></div>
+            <img alt="Atmospheric restaurant interior" class="w-full aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6dbkO0YIlSQ2GdbyRBufDCyT7ND7guuxsvJcOShk0q_IIi4n3FnZ02kW04wNudnGWcQW0ch1adLVCVqI0eXlKpP3kBS4s5Gde0oTDif6ouih29mvw14qtfMOy5lSijME3Rh_wS8r6hv_oCU1RIKtHJSQeXKbg-t4Ka3BWHvVpFO5o6Bzst8UO0WgGtWQuq4V6Vr5iadsv9Uw0DJQLcwIEVEG6a_YE5PDFFsKFhJzluId9F8c6HPYCKghMI9hENsEtFb2rIzLS3gC-" />
+            <div class="absolute -bottom-10 -right-10 hidden md:block w-72 h-48 bg-surface-container-high/40 backdrop-blur-md border border-outline-variant/30 p-8 shadow-2xl">
+              <p class="font-headline text-primary text-4xl font-bold">120+</p>
+              <p class="font-label text-xs tracking-widest text-secondary mt-2 uppercase">Signature Recipes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Signature Dishes -->
+    <section class="py-32 px-8 bg-surface-container-lowest">
+      <div class="max-w-screen-2xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+          <div class="max-w-2xl">
+            <span class="font-label text-primary text-xs tracking-[0.5em] uppercase mb-4 block">The Chef's Selection</span>
+            <h2 class="font-headline text-5xl md:text-7xl font-bold tracking-tight">SIGNATURE DISHES</h2>
+          </div>
+          <p class="font-body text-secondary max-w-xs mb-2">Our most requested creations, meticulously plated and served with a side of soul.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-outline-variant/10">
+          <!-- Rocky Raccoon -->
+          <div class="bg-surface p-12 md:p-20 group hover:bg-surface-container-low transition-colors duration-500">
+            <div class="aspect-square overflow-hidden mb-12">
+              <img alt="Rocky Raccoon Roll" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3qF1DeOVdr1Yn490tthq1MScxDF1ZCaZhhVvDg9YYWtX6Qb4k2SkBm8NjcUSmqj1-Ivq42NeBRSf2Zb1LFIFzndlgfwoW_AP7B99KZGDpasqhnyjwMHLkQfukj16H8s10TFwW-d7i0LM1etZR1oFsBmen5t_dzJsTcwR-Z4cCp4FITy0ESQ1L_LpoyQ_FPFL2f_slWfbjbWU_8mCrtLM7egvRuLvm8AjCD7ZrRRtOF_rVS07-0YXkg1PMM403rUVw-Kz0OwJuhe2I" />
+            </div>
+            <div class="flex justify-between items-start mb-6">
+              <h3 class="font-headline text-4xl font-bold">Rocky Raccoon</h3>
+              <span class="font-headline text-2xl text-primary">$19</span>
+            </div>
+            <p class="text-secondary font-light text-lg mb-8 leading-relaxed">Crab tempura, cucumber, topped with eel & avocado. Our most beloved signature roll — a cult classic.</p>
+            <a href="/menu" class="text-xs font-label tracking-[0.3em] uppercase text-outline-variant group-hover:text-primary transition-colors">Experience flavor</a>
+          </div>
+          <!-- Rocket Man -->
+          <div class="bg-surface p-12 md:p-20 group hover:bg-surface-container-low transition-colors duration-500">
+            <div class="aspect-square overflow-hidden mb-12">
+              <img alt="Rocket Man Rainbow Roll" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWQ05ChWHP2K4_JIl8P-9jDHM2T96BbbFnesW-ABPu2z39teMG0mTrTfhzmEZs5eiHrtrnpmyERou4-7cYQsqgHN2utQp7aPn0hWm4mub-tjy-JOkxI3F458QSJTGSzEVz6m3ViGDuaNqGUU0Mom4aEZgLx32T6cNn61rfw4oEqhYaFRXl8Blcq1UVjAVPvwF7nH3pVmCo14BQ5wMNhqLbC6I7bk-zjq1Yi0IMXzv3VIJnw7yk58eQvyfjsMa2BoMWiffXn5jHdoRq" />
+            </div>
+            <div class="flex justify-between items-start mb-6">
+              <h3 class="font-headline text-4xl font-bold">Rocket Man</h3>
+              <span class="font-headline text-2xl text-primary">$17</span>
+            </div>
+            <p class="text-secondary font-light text-lg mb-8 leading-relaxed">Crab, cucumber, avocado, topped with tuna, salmon, redsnapper & avocado. A rainbow of flavors.</p>
+            <a href="/menu" class="text-xs font-label tracking-[0.3em] uppercase text-outline-variant group-hover:text-primary transition-colors">Experience flavor</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Gallery -->
+    <section class="py-32 bg-surface">
+      <div class="max-w-screen-2xl mx-auto px-8">
+        <div class="text-center mb-24">
+          <h2 class="font-headline text-5xl md:text-7xl font-black tracking-tighter mb-4">LET THE GOOD TIMES ROLL</h2>
+          <p class="font-body text-secondary tracking-widest uppercase text-sm">Follow the vibe @onaroll63</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+          <div class="grid gap-4 md:gap-8">
+            <img alt="Atmosphere 1" class="w-full aspect-[3/4] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9d14DPjk4kKN8gP3VNYxnwQNipb72bxfKjPvjARlRMSJi26UGJifwUZRoug4-w3VFRzp-5hdgg1c9b6LH-JpgIJp8PsL_Cc_DbuFUnVv5fhwx2PVO5HV5KliL_xAhRRRuJ9KAIHs4iYzEMQntxB8H6MtZwVh1TZRr6gIqTkdGTiDEakrXNphrDI4B34LlILSEherGzMkiQ4Qwuwc4zuYjvMmHXBcG49bBNiH6pN0WJ1Nv-5Tc3M8TwkWy-X2aCzNsgyxba9-7sG5E" />
+            <img alt="Atmosphere 2" class="w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5OgtzS14pmtNyl8lJ9STok8rNFkJfy-FxKSDdWii6wuY_i2iIjWe1J7O_ecJwhlKoor_7o7cmtrtWr-FUBXM2u4NxhpfWWuzsb_PJ-RD_KXXNJ9cFDj5zT6cVsG3Roxm_5RGcQv20ibil5yJafGy8Zxm18z9l9NKH0UXMp2EEHUePZokjqErW28d8gMOHpscaxYAttT75rNKtb8Qm78R5H6XhzHqsauoVq8sgv9KONnQ559O8sOBpZFW7DsmFAF0RlNv3lOAzPoLT" />
+          </div>
+          <div class="grid gap-4 md:gap-8 pt-12 md:pt-24">
+            <img alt="Food Detail 1" class="w-full aspect-[3/4] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPcwAfJWzk8QsIdMD7MuhtVWzAKsVAHSPlrx8atP57H1-ubnGIEBN6tjWXSFnndgHJdp9eZG-UNgXgX12A9GN1GMd-iNLRGQBypLHXjVMqahATCu_QVysirvEeCPboldf1rhRsW1Pc6qqWLO5m3bV_uhWifIfMHoQwTCv-dAogmi8UU7uLQSLz-vyjPGPpZP8mSx6Xi4-MOI9dIdd7cdGkgikSqfeRKIH0V8jWb9rV7zFmgVmt_4E-S60AmzofGb6oVhNAkRieBqyL" />
+            <img alt="Music 1" class="w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhG-wHf0xIMiz7wjPmDuTz-kOskheVos0hqYG4E2f1RLdmfBuJ2F3aTNIQjv1QlHth5KFazwLfShKf7Y3217mONB7P1V0-Y0Ui4zDWRNiAyefpuEq5pY2e-ht2dBDliQZuoxYucE9n071-dt8TcEy9NJmNzLjysZhuIaw4FbtpARVZwtZUmFbzsyG7aK79GCfI_9Vmp1mRUPA9X4jacjxhSv5A_06WSA87WoDq6CXYzo92NX4MU8W_ObQBPgWvOo4mhINNwKedSgj4" />
+          </div>
+          <div class="grid gap-4 md:gap-8">
+            <img alt="Atmosphere 3" class="w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuMjMnBtEmh7LRZDe1Kkzu3Xsr04UaxmSoQby6oA0M1m8s99RAHj4h2F2WwjGsrLccSUCcegnV0h9JcKc-Ri2Q4Emlg5iSUxBvhpWIn2ByGBauEcPhic6vpD-BUVaWnTTQzIgv1sQJ7HDuGW23vz-xqFT0HCn3lnOKpepPhlUHnR02RDzkhy3xkpcFXZWmThDsGy87-48dLDiFYEBGFYUqMG4M_2kBJY_LH-BKLtedG3hIjVM36mX3AvZohwBj5PErCYx58h3C2hiE" />
+            <img alt="Chef at work" class="w-full aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBYRVzbdSyo0kp9kHXPmGeD1KZGWntGmfdMklKB8C2Jll7j04YKacGNr8m6_g6dIFK5fJIEYrnhhqzID3dMJKOxKusqmD51OTScuH2BOGJ6wGRrxHLRt0P4216R6KdCKoSLPaRRO-0PvuyH7VNEl0TmkghHE5-Lwd7oQ23jYOd8ySCzT2snm91Mko5M4_GrvRhkG8Q_3DYlK0ggI0eb9exO6PSQ1moOJWFGA_lkq9TxALFfxm8OpM1B_1_qKbQ-4JACq45orxYOIm4" />
+          </div>
+          <div class="grid gap-4 md:gap-8 pt-8 md:pt-16">
+            <img alt="Cocktail 1" class="w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYceUBfFFbb3cbqRWFM23BjTVn_-wAjPzfHFxsYYqcTpChQql_afuNWGDynd-QwyQeOdBY4cJv0nleZYuHERB0ozz-BS61hrbp_wnfDRRbRH7r7UAtDaH0CfeE_j8XZdL2rnAvEDB3qzI8WaO951hfBSBcieD1hz4CImB-ioZzK_pOvZqTxXL85BKjXb4KVcXHlx0mpdalHcZn4z7CVdB-v0uNySydo7lJeHM25haEWOPTPqjlszkvaqUhYm3KusocCZ1W_rWoCxqk" />
+            <img alt="Crowd vibe" class="w-full aspect-[3/2] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuZtdHFbttv3HRjb2Ci-rBT4033gsBCtERuy5SYo1CBHNBy_UhSycrYVtp5NTQ2wCi7oQj1RMVPeIaMIJS06Oo1BqDSW9HRDHFeyaozt9vGDvsxtwmwtoc_cU1UjMyVdY9q-pCm9x0-gekhsdJEMI1U75fr8iQ-Z7rTRhBxiw_YWGKUqwpfCfceSdCyk_3mOjyXnH_KTIephzq9fh0D5TxBayeDhg5jtcq_U-CLLTsCcYltouf6PuLcEXtbl0Q5762qWXz4xifZnZT" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Live Music -->
+    <section class="py-32 bg-surface-container-low relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10 pointer-events-none">
+        <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/pinstriped-dark.png')]"></div>
+      </div>
+      <div class="max-w-screen-2xl mx-auto px-8 relative z-10">
+        <div class="flex flex-col md:flex-row gap-16 items-center">
+          <div class="md:w-1/2">
+            <span class="font-label text-primary text-xs tracking-[0.5em] uppercase mb-8 block">On Stage Tonight</span>
+            <h2 class="font-headline text-7xl md:text-9xl font-black tracking-tighter mb-8 italic music-glitch transition-all">LIVE ACTS</h2>
+            <div class="space-y-6">
+              <div class="border-l-4 border-primary pl-6 py-2 group hover:bg-surface-container-high transition-colors cursor-default">
+                <p class="text-primary font-headline text-lg font-bold mb-1">TONIGHT @ 9PM</p>
+                <h3 class="text-on-surface font-headline text-3xl font-bold uppercase">The Vinyl Collective</h3>
+                <p class="text-secondary font-label text-xs tracking-widest mt-1">Experimental Jazz Fusion</p>
+              </div>
+              <div class="border-l-4 border-outline-variant/30 pl-6 py-2 group hover:border-primary transition-all">
+                <p class="text-outline-variant font-headline text-lg font-bold mb-1 group-hover:text-primary">FRI @ 10PM</p>
+                <h3 class="text-secondary font-headline text-3xl font-bold uppercase group-hover:text-on-surface">Neon Echo</h3>
+                <p class="text-secondary font-label text-xs tracking-widest mt-1">Synth-Rock Revival</p>
+              </div>
+              <div class="border-l-4 border-outline-variant/30 pl-6 py-2 group hover:border-primary transition-all">
+                <p class="text-outline-variant font-headline text-lg font-bold mb-1 group-hover:text-primary">SAT @ 11PM</p>
+                <h3 class="text-secondary font-headline text-3xl font-bold uppercase group-hover:text-on-surface">DJ OMAKASE</h3>
+                <p class="text-secondary font-label text-xs tracking-widest mt-1">Deep House &amp; Rare Grooves</p>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2 grid grid-cols-2 gap-4">
+            <img alt="Live Music" class="w-full aspect-[4/5] object-cover rounded-sm shadow-2xl hover:scale-[1.02] transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrUeKdh7Jp35r5NUWVw1Z37MdA_atCMMHbrnMlvEJZHwGGYR3myXoSRrcl6QpJ-CXu_vA16AR6OxM6lJcJNmKL52ZAjaXKnKGriHTYlAC_Nd2LG3FTgJTYi0SBHf5RpyMtWragm8vtZEWs5DNk01n-v3AlW_WlFibPlnBeV26tWL1YVP2CTDZdCDJJVUnkTrVyRbkQb7sNz_u-IFjVe6bwJtTyL07VijVNhG2t_oAKszFv_bNmh-Vur1qEMvVvGAKCzNeecT8Fbaai" />
+            <img alt="DJ setup" class="w-full aspect-[4/5] object-cover rounded-sm shadow-2xl translate-y-12 hover:scale-[1.02] transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM69gNe0qNqHacvTEHOuQnHQw3flDZNRzTYUaPRWfO6VPgcCax8GTjTlWInh8wdFEMBOMfj6Ec70nit7BP5F6xUOY39_ifAMPAM-nWX6pZBF9Bi_NeT1c8KQG00dTNbzP0qZjkwWZvt1yy67__oSVPVbyB2BoZjycAIDH5j3Q4CLAmgRLPmkLQcuHw5lx45JL6WgquX7_Wn6rPuk5o8-vg9DrIkNHstvADzZiiPZrztGFN2LKg4nnlVCuafc8LJOuJ1RYvmMg6kAhZ" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <Footer />
 </Layout>

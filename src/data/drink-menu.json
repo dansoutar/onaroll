@@ -1,60 +1,64 @@
 {
   "cocktails": [
-    { "name": "American Woman", "price": 14, "description": "Tequila blanco, cucumber, jalapeño, lime, agave, salt rim", "spicy": true, "note": "Upgrade to Casamigos Reposado +$4" },
-    { "name": "T.N.T.", "price": 13, "description": "Bourbon, ginger beer, habanero shrub, lemon, honey", "spicy": true, "note": "Upgrade to Blanton's Single Barrel +$6" },
-    { "name": "Night Moves", "price": 14, "description": "Mezcal, blood orange, ancho chili liqueur, lime, smoked salt", "spicy": true, "note": "Upgrade to Del Maguey Vida +$5" },
-    { "name": "Hot Blooded", "price": 13, "description": "Vodka, serrano-infused watermelon, lime, tajín rim", "spicy": true, "note": "Upgrade to Grey Goose +$4" },
-    { "name": "Roxanne", "price": 12, "description": "Gin, elderflower, grapefruit, rosemary, tonic" },
-    { "name": "Purple Rain", "price": 13, "description": "Butterfly pea tea vodka, lavender, lemon, honey, prosecco float" },
-    { "name": "Little Wing", "price": 12, "description": "Rum, coconut, pineapple, lime, toasted coconut rim" },
-    { "name": "Midnight Rider", "price": 13, "description": "Whisky, cold brew, kahlúa, cream, chocolate bitters" },
-    { "name": "Rolling Stone", "price": 12, "description": "Aperol, prosecco, blood orange, rosemary sprig" },
-    { "name": "Rhiannon", "price": 14, "description": "Gin, St-Germain, cucumber, mint, lime, sparkling water", "note": "Upgrade to Hendrick's +$3" },
-    { "name": "Simple Man", "price": 11, "description": "Bourbon, honey, lemon, angostura bitters — a classic done right", "note": "Upgrade to Knob Creek +$4" },
-    { "name": "Space Oddity", "price": 15, "description": "Cognac, Chambord, lychee, lime, edible galaxy shimmer" },
-    { "name": "Golden Years", "price": 12, "description": "Champagne, peach purée, elderflower, orange bitters" },
-    { "name": "Tiny Dancer", "price": 13, "description": "Tequila, blue curaçao, lime, agave, tajín, citrus salt" }
+    { "name": "Phil Collins", "price": 13, "description": "Bombay Sapphire Gin, triple sec, fresh lemon, fresh lime, fresh orange, sugar, soda" },
+    { "name": "Motor City Manhattan", "price": 12, "description": "Canadian Club 12 Year, sweet vermouth, cherry bitters, black cherry" },
+    { "name": "Old Fashioned", "price": 13, "description": "Jim Beam Bourbon, brown simple syrup, burnt orange", "note": "+$2 for Premium" },
+    { "name": "Cucumber Thunder", "price": 13, "description": "house gin, mint, cucumber, lime, simple syrup, soda" },
+    { "name": "Kentucky Ass", "price": 13, "description": "Maker's Mark Bourbon, house-made ginger syrup, crushed ice, lime" },
+    { "name": "Boston George", "price": 14, "description": "Canadian Club Rye, egg whites, fresh lemon & lime, simple syrup, bitters" },
+    { "name": "Buddha Tea", "price": 12, "description": "house rye, peach schnapps, fresh lemon & lime, house-made ginger syrup, tea blend" },
+    { "name": "Mojito", "price": 12, "description": "house rum, mint, lime, soda, house-made puree", "note": "Premium: strawberry or blueberry +$1" },
+    { "name": "Caesar", "price": 13, "description": "house vodka, house-made caesar mix, seasonal veg garnish" },
+    { "name": "Spiked Lemonade", "price": 11, "description": "vodka, fresh squeezed lemonade, house made puree", "note": "Premium: strawberry or blueberry +$1" },
+    { "name": "Espresso Martini", "price": 14, "description": "house vodka, kahlua, espresso" },
+    { "name": "Last Word / Wrong Word", "price": 14, "description": "house gin, green chartreuse, maraschino liqueur, lime", "note": "Wrong Word adds mezcal rinse +$1" },
+    { "name": "The Toronto", "price": 12, "description": "Canadian Club 12 Year, fernet branca, bitters, brown simple syrup, burnt orange" },
+    { "name": "Negroni", "price": 13, "description": "house gin, sweet vermouth, burnt orange", "note": "+$2 for Premium" }
   ],
-  "whiteWine": [
-    { "name": "Kim Crawford Sauvignon Blanc", "price": 11, "description": "Marlborough, New Zealand — crisp citrus, fresh cut grass" },
-    { "name": "Santa Margherita Pinot Grigio", "price": 13, "description": "Valdadige, Italy — golden apple, citrus, light floral notes" }
-  ],
-  "redWine": [
-    { "name": "Louis Martini Cabernet Sauvignon", "price": 12, "description": "Sonoma County, California — dark fruit, oak, smooth tannins" },
-    { "name": "Meiomi Pinot Noir", "price": 13, "description": "California — strawberry, blackberry, mocha, creamy finish" }
-  ],
-  "wineByBottle": [
-    { "name": "Kim Crawford Sauvignon Blanc", "price": 42, "description": "Marlborough, New Zealand" },
-    { "name": "Louis Martini Cabernet Sauvignon", "price": 48, "description": "Sonoma County, California" }
-  ],
+  "wine": {
+    "white": [
+      { "name": "Santa Margherita, Pinot Grigio", "price": 11, "description": "Alto Adige/Trentino, Italy" },
+      { "name": "Jackson Triggs, Sauvignon Blanc", "price": 8, "description": "Canada" }
+    ],
+    "red": [
+      { "name": "J Lohr Seven Oaks Cabernet Sauvignon", "price": 13, "description": "California, USA" },
+      { "name": "Folonari Valpolicella", "price": 7, "description": "Veneto, Italy" }
+    ],
+    "bottle": [
+      { "name": "J Lohr Seven Oaks Cabernet Sauvignon", "price": 52 },
+      { "name": "Santa Margherita, Pinot Grigio", "price": 40 }
+    ]
+  },
   "sake": [
-    { "name": "Gekkeikan Sake", "price": 9, "description": "Classic junmai — smooth, slightly sweet, pairs with anything" },
-    { "name": "Hakutsuru Nigori", "price": 11, "description": "Unfiltered cloudy sake — rich, creamy, tropical fruit notes" }
+    { "name": "Hot Sake", "price": 12 },
+    { "name": "Sake Bomb", "price": 7 }
   ],
-  "premiumBottles": [
-    { "name": "Bacardi Superior", "price": 150 },
-    { "name": "Grey Goose Vodka", "price": 200 },
-    { "name": "Casamigos Blanco", "price": 220 },
-    { "name": "Johnnie Walker Black", "price": 180 },
-    { "name": "Hennessy VS", "price": 200 },
-    { "name": "Don Julio 1942", "price": 350 }
-  ],
-  "domesticBottles": [
-    { "name": "Budweiser", "price": 6 },
-    { "name": "Bud Light", "price": 6 },
-    { "name": "Coors Light", "price": 6 },
-    { "name": "Molson Canadian", "price": 6 },
-    { "name": "Kokanee", "price": 6 },
-    { "name": "Moosehead Lager", "price": 6 }
-  ],
-  "onTap": [
-    { "name": "Stella Artois", "price": 8, "description": "Belgian lager — crisp, clean, refreshing" },
-    { "name": "Coors Light", "price": 7, "description": "Light lager — easy drinking" },
-    { "name": "Muskoka Craft Lager", "price": 9, "description": "Ontario craft — golden, balanced, smooth" },
-    { "name": "Guinness Draught", "price": 9, "description": "Irish dry stout — roasted, creamy, iconic" }
-  ],
-  "tallCans": [
-    { "name": "Pabst Blue Ribbon", "price": 7, "description": "473ml — the original easy drinker" },
-    { "name": "White Claw Hard Seltzer", "price": 8, "description": "473ml — mango or black cherry" }
-  ]
+  "beer": {
+    "premium": [
+      { "name": "Kronenbourg Lager", "price": 7.25 },
+      { "name": "Corona", "price": 7.25 },
+      { "name": "Heineken", "price": 7.25 },
+      { "name": "Twisted Tea", "price": 7.25 },
+      { "name": "Kronenbourg Rouge", "price": 7.25 },
+      { "name": "Kronenbourg Blanc", "price": 7.25 }
+    ],
+    "domestic": [
+      { "name": "Budweiser", "price": 5.50 },
+      { "name": "Bud Light", "price": 5.50 },
+      { "name": "Coors Light", "price": 5.50 },
+      { "name": "Canadian", "price": 5.50 },
+      { "name": "Sleeman Clear", "price": 5.50 },
+      { "name": "Moosehead", "price": 5.50 }
+    ],
+    "onTap": [
+      { "name": "Seasonal Feature", "price": 8.50 },
+      { "name": "Walkerville IPA", "price": 8.50 },
+      { "name": "Sapporo", "price": 8.50 },
+      { "name": "Innis & Gunn Original", "price": 9.50 }
+    ],
+    "tallCans": [
+      { "name": "Guinness Stout", "price": 8 },
+      { "name": "Walkerville Honest Lager", "price": 8 }
+    ]
+  }
 }

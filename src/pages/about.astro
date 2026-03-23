@@ -3,179 +3,141 @@ import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import siteInfo from '../data/site-info.json';
-
-// Image URLs from Appendix B — About page
-const heroImage = 'https://lh3.googleusercontent.com/aida-public/AB6AXuD6dbkO0YIlSQ2GdbyRBufDCyT7ND7guuxsvJcOShk0q_IIi4n3FnZ02kW04wNudnGWcQW0ch1adLVCVqI0eXlKpP3kBS4s5Gde0oTDif6ouih29mvw14qtfMOy5lSijME3Rh_wS8r6hv_oCU1RIKtHJSQeXKbg-t4Ka3BWHvVpFO5o6Bzst8UO0WgGtWQuq4V6Vr5iadsv9Uw0DJQLcwIEVEG6a_YE5PDFFsKFhJzluId9F8c6HPYCKghMI9hENsEtFb2rIzLS3gC-';
-const founderImage = 'https://lh3.googleusercontent.com/aida-public/AB6AXuC3qF1DeOVdr1Yn490tthq1MScxDF1ZCaZhhVvDg9YYWtX6Qb4k2SkBm8NjcUSmqj1-Ivq42NeBRSf2Zb1LFIFzndlgfwoW_AP7B99KZGDpasqhnyjwMHLkQfukj16H8s10TFwW-d7i0LM1etZR1oFsBmen5t_dzJsTcwR-Z4cCp4FITy0ESQ1L_LpoyQ_FPFL2f_slWfbjbWU_8mCrtLM7egvRuLvm8AjCD7ZrRRtOF_rVS07-0YXkg1PMM403rUVw-Kz0OwJuhe2I';
-const sushiPlattersImage = 'https://lh3.googleusercontent.com/aida-public/AB6AXuD3-PzXPFDHrK-7sIXHPslX_jyh8gOUOTJ3qdph3mspni6ZujaRcd6mzRVSK7Ch13wghDqXjpOQGzQaDuRCN_ATzrycr4OHX2BtadiF9sWuCIlAABYVPPz0D93Oyb1Vd3LXb0XJfV4EDrveKkkitZHqb-JE7Y-rjLiG_f3R-Z6Sjr9vvWzAtiOSjnunbjPBkmXLogynr9pz_W8yUmNbSqN28bxqyi9MN3Str25fzZYH6nGR4kVDw4hfY4fc2NGdnMTpQbTXtKnCqYz6';
-const slidersImage = 'https://lh3.googleusercontent.com/aida-public/AB6AXuDqc03tOLqXYLAiA12OUL6nFOtB6zmkqE_HBJnVKo59ITpY7N5V6yXf8UfUpsVorsjIVnfnIV6QzyAxqbFLhpooDhzBMV60TwnBDhmjAMRyGLHRhWC3kofQ032kazIN1Sv2CjbIq1eN1oof7N9KHWi5-AOCjA_cC1clI6K1o1n3yeiyLsVVwkaLOWfuiHV6CNajb5Exr4RveoXD8Lf1S4dVieHTb9nFz1wN44JA0RgJGgdPv8puwprrASUS-ofgLFbq5Ghm4kASTT03';
 ---
 
 <Layout title="About | On A Roll Sushi & Sliders">
   <Nav />
+  <main>
+    <!-- Hero Section -->
+    <section class="relative h-[614px] flex items-end overflow-hidden">
+      <div class="absolute inset-0 bg-surface">
+        <img alt="Cinematic close-up of sushi being prepared" class="w-full h-full object-cover transition-all duration-1000 scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFqO0ITHLIHsIiXoh5WLsdsFJAR2-sj476vOq_xBQv4ROTUlUqnbR4O_K5_RaewKJGm9AsLeGFwhM38EiJYCPUZwYGtyjcGjlQhss2ArL4e4zfv8hlbhu5kMe49AbCbHG_JiYB_0GMGsgk2R1HOjQnOWnkhceZbaHUs26au1TNTb_ZJH4pnII1UJP0n70iZjkxwMcAp6Avr8ytjgxon7okknGsWgolK24MtKmOVo0muIPHMPjB4wRqNmQGoIdkXPmpPKek3oRftlwD" />
+        <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
+      </div>
+      <div class="relative w-full max-w-screen-2xl mx-auto px-8 pb-16">
+        <p class="font-headline text-primary tracking-[0.4em] uppercase text-xs mb-4 opacity-80">ESTABLISHED IN 2017</p>
+        <h1 class="font-headline font-black text-7xl md:text-9xl tracking-tighter uppercase leading-[0.85] text-white">
+          ABOUT<span class="text-primary text-glow">.</span>
+        </h1>
+      </div>
+    </section>
 
-  <!-- ===== SECTION 1: HERO ===== -->
-  <section class="relative h-[90vh] flex items-end overflow-hidden">
-    <!-- Background Image -->
-    <div class="absolute inset-0">
-      <img
-        src={heroImage}
-        alt="On A Roll restaurant"
-        class="w-full h-full object-cover"
-      />
-    </div>
-    <!-- Hero Scrim -->
-    <div class="hero-scrim absolute inset-0"></div>
-    <!-- Content -->
-    <div class="relative z-10 w-full px-4 md:px-8 pb-20 max-w-screen-2xl mx-auto">
-      <h1 class="font-headline font-black uppercase leading-none tracking-tighter text-on-surface text-glow" style="font-size: clamp(5rem, 16vw, 16rem);">
-        ABOUT<span class="text-primary">.</span>
-      </h1>
-      <p class="text-secondary font-label text-sm md:text-base tracking-[0.3em] uppercase mt-4 max-w-md">
-        Locally Owned &amp; Family Operated — Windsor, ON
-      </p>
-    </div>
-  </section>
-
-  <!-- ===== SECTION 2: OUR STORY ===== -->
-  <section class="py-32 bg-surface-container-low animate-on-scroll">
-    <div class="px-4 md:px-8 max-w-screen-2xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-
-        <!-- Image side — 6 cols -->
-        <div class="lg:col-span-6">
-          <div class="aspect-[4/5] w-full overflow-hidden">
-            <img
-              src={founderImage}
-              alt="On A Roll founder and restaurant"
-              class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-            />
+    <!-- Section 1: Our Story -->
+    <section class="py-32 bg-surface">
+      <div class="max-w-screen-2xl mx-auto px-8">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+          <div class="md:col-span-6 relative group overflow-hidden">
+            <img alt="Founder preparing a signature dish" class="w-full h-full object-cover aspect-[4/5] transform transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbVTIKff-4p4Qs30fdGucESD-d7MbJ4z5oSPGQ5zGgI3PRU5RfJv-ieI92E4TWmC5qWoK6-s6vpzseobW8w1K7gkIJmr5tJNov4WlLXIdpJYfwkhOaETVuTmb9zPhu3d0xG0UnOS6cwEwj07ZTyhNEVel6zyJxmTSC9RHBNrAlxy3wFxp371FkUezKn__5X2EC0rgCV6ReyMQ-6-iX9cWVcTjUA_NZqFU4gV1W-CeFMdcNwcxTX5j4HFuKqSbuDIaoCdEtmcbZGiDE" />
+            <div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+          </div>
+          <div class="md:col-span-1"></div>
+          <div class="md:col-span-5">
+            <span class="font-headline text-primary tracking-[0.3em] uppercase text-xs mb-6 block">Our Heritage</span>
+            <h2 class="font-headline text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-8 leading-none">
+              Our <span class="italic text-primary">Story.</span>
+            </h2>
+            <div class="space-y-6">
+              <p class="font-body text-lg text-secondary leading-relaxed font-light">
+                Founded in 2017, On A Roll was born from a simple idea: why not combine the art of sushi with the soul of gourmet sliders? Located on a quaint, happening street right downtown Windsor, we've been serving up original, creative dishes ever since.
+              </p>
+              <p class="font-body text-lg text-secondary leading-relaxed font-light">
+                An easy walk from Caesar's casino and the Detroit waterfront, we offer a cozy atmosphere, classic rock & roll vibes and live music on the weekends. The chef's really respect their craft and prepare high quality, fresh and flavourful food that is very well presented.
+              </p>
+            </div>
+            <div class="mt-12 flex items-center gap-4">
+              <div class="w-16 h-[1px] bg-primary"></div>
+              <span class="font-headline font-bold text-white uppercase tracking-widest text-xs">Since 2017</span>
+            </div>
           </div>
         </div>
-
-        <!-- Text side — 5 cols offset -->
-        <div class="lg:col-span-5 lg:col-start-8 space-y-8">
-          <span class="text-primary uppercase tracking-[0.3em] font-bold text-xs">Locally Owned &amp; Family Operated</span>
-          <h2 class="text-5xl md:text-6xl font-headline font-black uppercase leading-none">
-            Our Story
-          </h2>
-          <p class="text-secondary font-light leading-relaxed">
-            Born in Windsor in 2017, On A Roll is more than a restaurant — it's a vibe. We took two things nobody thought to combine — premium sushi and gourmet sliders — and made them inseparable.
-          </p>
-          <p class="text-secondary font-light leading-relaxed">
-            Add live music, handcrafted cocktails, and a room that pulses with energy, and you have something the city had never seen before. From day one, our mission has been simple: bring people together over food that surprises them, in a space that feels alive.
-          </p>
-          <p class="text-secondary font-light leading-relaxed">
-            We're proud to be locally owned and operated — rooted in Windsor, built for Windsor, and grateful every night for the community that keeps rolling with us.
-          </p>
-          <div class="flex items-center gap-4 pt-4">
-            <div class="w-12 h-[2px] bg-primary"></div>
-            <span class="text-primary font-headline font-bold uppercase tracking-widest text-sm">Est. {siteInfo.established}</span>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== SECTION 3: INTRO — WHO KNEW ===== -->
-  <section class="py-32 animate-on-scroll">
-    <div class="px-4 md:px-8 max-w-screen-2xl mx-auto text-center space-y-8">
-      <span class="text-primary uppercase tracking-[0.3em] font-bold text-xs">The Concept</span>
-      <h2 class="font-headline font-black uppercase leading-none tracking-tighter text-on-surface" style="font-size: clamp(2rem, 6vw, 6rem);">
-        Who Knew Sushi &amp; Sliders<br/>Went So Well Together?
-      </h2>
-      <p class="text-secondary font-light leading-relaxed max-w-2xl mx-auto text-lg">
-        We did. On A Roll was built on the idea that the best nights out shouldn't force a choice. Whether you're deep in a specialty roll or biting into a smash burger slider, you're in the right place. The vibe is electric, the playlist is curated, and every dish is made to be shared — or savoured solo. No rules. Just good food, good music, and good people.
-      </p>
-    </div>
-  </section>
-
-  <!-- ===== SECTION 4: OUR CRAFT ===== -->
-  <section class="py-32 bg-surface-container-low animate-on-scroll">
-    <div class="px-4 md:px-8 max-w-screen-2xl mx-auto">
-
-      <div class="mb-16">
-        <span class="text-primary uppercase tracking-[0.3em] font-bold text-xs">Craft</span>
-        <h2 class="text-5xl md:text-6xl font-headline font-black uppercase leading-none mt-4">Our Craft</h2>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-
-        <!-- Sushi Platter — 7 cols -->
-        <div class="lg:col-span-7 relative group">
-          <div class="aspect-[4/3] w-full overflow-hidden">
-            <img
-              src={sushiPlattersImage}
-              alt="Specialty sushi platter"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-            />
+    <!-- Section 2: Intro -->
+    <section class="py-32 bg-surface-container-lowest">
+      <div class="max-w-screen-2xl mx-auto px-8">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+          <div class="md:col-span-5">
+            <span class="inline-block py-1 px-3 border border-outline-variant/30 text-secondary text-[10px] tracking-[0.3em] uppercase mb-8">
+              Locally Owned &amp; Family Operated
+            </span>
+            <h2 class="font-headline text-4xl md:text-6xl font-bold leading-tight tracking-tighter text-white">
+              Who Knew Sushi &amp; Sliders Went So Well Together?
+            </h2>
           </div>
-          <!-- Numbered overlay -->
-          <div class="absolute top-6 left-6 w-14 h-14 border border-primary flex items-center justify-center">
-            <span class="text-primary font-headline font-black text-xl">01</span>
-          </div>
-          <div class="mt-6 space-y-2">
-            <h3 class="text-2xl font-headline font-black uppercase">The Rolls</h3>
-            <p class="text-secondary font-light leading-relaxed max-w-md">
-              Over 40 specialty and classic rolls, crafted fresh daily with premium fish and inventive flavour combinations.
+          <div class="md:col-span-1"></div>
+          <div class="md:col-span-6 mt-4 md:mt-24">
+            <p class="font-body text-lg md:text-xl text-secondary leading-relaxed font-light">
+              Located on a quaint, happening street right downtown Windsor. Original, creative dishes and staff that will make you feel like you are hanging out in your living room enjoying a good time. Come by once and we'll greet you by name like old friends.
             </p>
+            <div class="mt-12 w-24 h-[1px] bg-primary/40"></div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Sliders — 4 cols, offset down -->
-        <div class="lg:col-span-4 lg:col-start-9 lg:mt-24 relative group">
-          <div class="aspect-[3/4] w-full overflow-hidden">
-            <img
-              src={slidersImage}
-              alt="Gourmet fusion sliders"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-            />
+    <!-- Section 3: Our Craft -->
+    <section class="pb-40 bg-surface overflow-hidden">
+      <div class="max-w-screen-2xl mx-auto px-8">
+        <!-- Layout Row 1: The Platter & The Vision -->
+        <div class="flex flex-col md:flex-row items-end gap-16 mb-40 mt-20">
+          <div class="w-full md:w-7/12 relative aspect-[4/5] md:aspect-[16/10] overflow-hidden group">
+            <img alt="Exquisite sushi platter" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq_xr-uzw0YSH5e2UYYbyrM7G7dzu5-EpunmnzsXOYaee1dvF2WvEUHGZDtCdiROkoMBDlR2lNaJfjqQG1KFw9V4ArX_YGIsGxppq9_OMQq_cBgKKsEQrOJ-7fev5qHh81Q_e7U303cK4V4NmQSXRR2n89bMo2vlsVeHcyQxr0sPxm8xD3H1J4A914yaE4WAa0UQsZFzaiYfUDX4vKyn6ul9UR8YP5-x46bn0EGmn1Wv_I2dEPirW777gKGTjX6Z4KAAE0x6XxNOsk" />
+            <div class="absolute top-8 right-8 text-white/20 font-headline text-9xl font-black leading-none pointer-events-none">01</div>
           </div>
-          <!-- Numbered overlay -->
-          <div class="absolute top-6 left-6 w-14 h-14 border border-primary flex items-center justify-center">
-            <span class="text-primary font-headline font-black text-xl">02</span>
-          </div>
-          <div class="mt-6 space-y-2">
-            <h3 class="text-2xl font-headline font-black uppercase">The Sliders</h3>
-            <p class="text-secondary font-light leading-relaxed">
-              10 slider varieties — from wagyu smash to lobster roll — served in threes and built to pair.
+          <div class="w-full md:w-4/12 pb-8">
+            <h3 class="font-headline text-3xl font-bold text-white mb-6 uppercase tracking-tighter">The Craft</h3>
+            <p class="font-light text-secondary leading-relaxed mb-6">
+              Our bartenders are very innovative and knowledgeable as they perfect our trendy and delicious cocktails. If you are lucky, you will witness our amazing local musicians and vocalist who never fail to get the whole restaurant singing along with them.
             </p>
+            <a class="text-primary text-xs tracking-[0.2em] uppercase font-bold border-b border-primary/20 pb-1 hover:border-primary transition-all" href="/menu">Explore the menu</a>
           </div>
         </div>
-
-      </div>
-
-      <!-- Floating detail card -->
-      <div class="mt-16 lg:mt-0 lg:absolute lg:bottom-8 lg:right-8 bg-surface-container-lowest p-8 space-y-4 max-w-xs relative">
-        <p class="text-primary font-headline font-black text-5xl leading-none">{siteInfo.established}</p>
-        <p class="text-xs font-label uppercase tracking-[0.3em] text-secondary">Established in Windsor</p>
-        <div class="border-t border-outline-variant/40 pt-4 space-y-2">
-          <p class="text-on-surface font-bold text-sm">120+ Menu Items</p>
-          <p class="text-secondary text-xs font-light">Locally Owned &amp; Family Operated</p>
+        <!-- Layout Row 2: The Vibe & The Sliders -->
+        <div class="flex flex-col md:flex-row-reverse items-center gap-16 md:gap-32">
+          <div class="w-full md:w-6/12 relative">
+            <div class="aspect-[3/4] overflow-hidden">
+              <img alt="Gourmet sliders paired with craft beer" class="w-full h-full object-cover transition-all duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcd9N_hNcKr0yX2MtQGk4kPitDqjW-X-qV6rzC0jzO9g4e_Y0SRZbwRazd7G77eSj3tpCt-24T51uOQjs89UBXd05ir6Q_I2bZyPHgGP92xEJBN7D-B0QQHsdvFtLZuUgrrqdOZO26zUrBDo-FUCT1zawti32r7y9HjILOEyPRpMEVqmxIC6kORc8UencEBSBX94Q4jW80bH0V5Ep_DNbaEEDlwSAjM87kMgJ8CZcWZ2e_upGIwPGd0Va3k2n0ICKJyDnqtbrpogvk" />
+            </div>
+            <!-- Floating Detail Card -->
+            <div class="absolute -bottom-12 -left-8 md:-left-16 bg-surface-container-high/40 backdrop-blur-md p-10 max-w-xs hidden md:block border border-outline-variant/30">
+              <p class="font-headline text-primary text-2xl font-bold mb-2">Rock &amp; Roll Soul</p>
+              <p class="text-xs text-secondary leading-loose tracking-wide">
+                The atmosphere is cozy yet buzzing and all around contagious. Whether you're looking for a great date spot, girl's night, game night with the boys or somewhere just to go out — On a Roll is the right choice!
+              </p>
+            </div>
+          </div>
+          <div class="w-full md:w-5/12 text-left md:text-right">
+            <h3 class="font-headline text-3xl font-bold text-white mb-6 uppercase tracking-tighter">The Spirit</h3>
+            <p class="font-light text-secondary leading-relaxed mb-8">
+              Every slider is a study in texture: toasted brioche, premium meats, and house-made sauces. Paired with a rotating selection of local craft beers, it's a symphony of the unexpected. We believe a great meal should feel like your favorite concert — energetic, memorable, and a little bit loud.
+            </p>
+            <div class="flex justify-start md:justify-end gap-4">
+              <div class="w-12 h-[1px] bg-outline-variant mt-3"></div>
+              <span class="font-headline font-bold text-white uppercase tracking-widest text-sm italic">The O.R. Collective</span>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <!-- ===== SECTION 5: CTA ===== -->
-  <section class="py-40 animate-on-scroll overflow-hidden">
-    <div class="px-4 md:px-8 max-w-screen-2xl mx-auto text-center space-y-12">
-      <h2 class="font-headline font-black uppercase leading-none tracking-tighter text-on-surface text-glow" style="font-size: clamp(3rem, 10vw, 10rem);">
-        TASTE THE<br/><span class="text-primary">REVOLUTION.</span>
-      </h2>
-      <div>
-        <a
-          href="/menu"
-          class="inline-flex items-center gap-3 bg-primary text-on-primary font-headline font-bold uppercase tracking-widest text-sm px-10 py-5 hover:bg-primary-container transition-colors duration-300"
-        >
-          View Our Menu
-          <span class="material-symbols-outlined text-base">arrow_forward</span>
-        </a>
+    <!-- CTA Section -->
+    <section class="py-40 bg-surface-container-lowest border-y border-outline-variant/10">
+      <div class="max-w-screen-xl mx-auto px-8 text-center">
+        <h2 class="font-headline text-5xl md:text-8xl font-black text-white tracking-tighter uppercase mb-12">
+          TASTE THE <span class="text-primary italic">REVOLUTION.</span>
+        </h2>
+        <div class="flex flex-col md:flex-row gap-6 justify-center">
+          <a href={siteInfo.orderOnline} target="_blank" rel="noopener noreferrer" class="bg-primary text-on-primary px-12 py-5 font-headline font-bold uppercase tracking-[0.2em] text-sm hover:scale-105 transition-transform duration-300 inline-block text-center">
+            Order Now
+          </a>
+          <a href="/menu" class="bg-transparent border border-outline-variant/30 text-white px-12 py-5 font-headline font-bold uppercase tracking-[0.2em] text-sm hover:bg-white hover:text-black transition-all duration-300 inline-block text-center">
+            View Menu
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <Footer />
 </Layout>

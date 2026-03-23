@@ -3,219 +3,152 @@ import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import siteInfo from '../data/site-info.json';
-
-// Image from Appendix B — Contact page map
-const mapImage = 'https://lh3.googleusercontent.com/aida-public/AB6AXuBrUeKdh7Jp35r5NUWVw1Z37MdA_atCMMHbrnMlvEJZHwGGYR3myXoSRrcl6QpJ-CXu_vA16AR6OxM6lJcJNmKL52ZAjaXKnKGriHTYlAC_Nd2LG3FTgJTYi0SBHf5RpyMtWragm8vtZEWs5DNk01n-v3AlW_WlFibPlnBeV26tWL1YVP2CTDZdCDJJVUnkTrVyRbkQb7sNz_u-IFjVe6bwJtTyL07VijVNhG2t_oAKszFv_bNmh-Vur1qEMvVvGAKCzNeecT8Fbaai';
-
-const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'] as const;
-type Day = typeof days[number];
 ---
 
 <Layout title="Contact | On A Roll Sushi & Sliders">
   <Nav />
+  <main class="pt-32">
+    <!-- Hero Title Section -->
+    <section class="px-8 max-w-screen-2xl mx-auto mb-24">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+        <div class="md:col-span-8">
+          <span class="text-primary font-label tracking-[0.3em] uppercase text-sm mb-4 block">Get in Touch</span>
+          <h1 class="text-6xl md:text-8xl font-headline font-black tracking-tighter uppercase leading-[0.9]">
+            Connect with the <br />
+            <span class="text-outline-variant">Art of the Roll</span>
+          </h1>
+        </div>
+        <div class="md:col-span-4 pb-2">
+          <p class="text-secondary text-lg max-w-xs leading-relaxed">
+            Whether it's a reservation or a simple query, we're ready to help you plan your perfect evening.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <!-- ===== SECTION 1: HERO ===== -->
-  <section class="pt-48 pb-32 px-4 md:px-8 max-w-screen-2xl mx-auto">
-    <span class="text-primary uppercase tracking-[0.3em] font-bold text-xs">Get In Touch</span>
-    <h1 class="font-headline font-black uppercase leading-none tracking-tighter text-on-surface mt-4" style="font-size: clamp(3rem, 10vw, 10rem);">
-      Connect with the<br/><span class="text-primary">Art of the Roll</span>
-    </h1>
-  </section>
-
-  <!-- ===== SECTION 2: SPLIT LAYOUT ===== -->
-  <section class="py-24 bg-surface-container-low animate-on-scroll">
-    <div class="px-4 md:px-8 max-w-screen-2xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
-
-        <!-- Left Column: Info -->
-        <div class="space-y-12">
-
+    <!-- Info & Form Section -->
+    <section class="px-8 max-w-screen-2xl mx-auto mb-32">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-24">
+        <!-- Info Column -->
+        <div class="lg:col-span-4 space-y-20">
           <!-- Location -->
-          <div class="space-y-3">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="material-symbols-outlined text-primary">location_on</span>
-              <h3 class="font-headline font-black uppercase tracking-widest text-sm">Location</h3>
+          <div>
+            <h3 class="text-primary font-label tracking-[0.2em] uppercase text-xs mb-6">Location</h3>
+            <div class="space-y-2">
+              <p class="text-2xl font-headline font-medium tracking-tight">63 Pitt St E</p>
+              <p class="text-secondary">Windsor, ON N9A 1G5</p>
+              <p class="text-secondary">Canada</p>
             </div>
-            <p class="text-secondary font-light leading-relaxed pl-9">{siteInfo.address}</p>
           </div>
-
           <!-- Contact -->
-          <div class="space-y-3">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="material-symbols-outlined text-primary">phone</span>
-              <h3 class="font-headline font-black uppercase tracking-widest text-sm">Phone</h3>
+          <div>
+            <h3 class="text-primary font-label tracking-[0.2em] uppercase text-xs mb-6">Inquiries</h3>
+            <div class="space-y-4">
+              <div>
+                <p class="text-xs text-outline mb-1 uppercase tracking-widest">Phone</p>
+                <p class="text-xl font-headline"><a href={`tel:${siteInfo.phone}`} class="hover:text-primary transition-colors">{siteInfo.phone}</a></p>
+              </div>
+              <div>
+                <p class="text-xs text-outline mb-1 uppercase tracking-widest">Email</p>
+                <p class="text-xl font-headline"><a href={`mailto:${siteInfo.email}`} class="hover:text-primary transition-colors">{siteInfo.email}</a></p>
+              </div>
             </div>
-            <p class="text-secondary font-light pl-9">
-              <a href={`tel:${siteInfo.phone}`} class="hover:text-primary transition-colors">{siteInfo.phone}</a>
-            </p>
-            <div class="flex items-center gap-3 mt-6 mb-4">
-              <span class="material-symbols-outlined text-primary">mail</span>
-              <h3 class="font-headline font-black uppercase tracking-widest text-sm">Email</h3>
-            </div>
-            <p class="text-secondary font-light pl-9">
-              <a href={`mailto:${siteInfo.email}`} class="hover:text-primary transition-colors">{siteInfo.email}</a>
-            </p>
           </div>
-
           <!-- Hours -->
-          <div class="space-y-4">
-            <div class="flex items-center gap-3 mb-6">
-              <span class="material-symbols-outlined text-primary">schedule</span>
-              <h3 class="font-headline font-black uppercase tracking-widest text-sm">Hours</h3>
-            </div>
-
-            <!-- Bar Hours -->
-            <div class="pl-9">
-              <p class="text-primary font-headline font-bold uppercase tracking-widest text-xs mb-3">Bar</p>
-              <div class="space-y-2">
-                {days.map((day) => (
-                  <div class="flex justify-between items-center border-b border-outline-variant/20 pb-2">
-                    <span class="text-secondary text-sm capitalize font-medium">{day}</span>
-                    <span class="text-on-surface text-sm">{siteInfo.hours.bar[day as Day]}</span>
-                  </div>
-                ))}
+          <div>
+            <h3 class="text-primary font-label tracking-[0.2em] uppercase text-xs mb-6">Operating Hours</h3>
+            <div class="space-y-3">
+              <p class="text-xs text-outline mb-3 uppercase tracking-widest">Bar</p>
+              <div class="flex justify-between items-baseline border-b border-outline-variant/20 pb-2">
+                <span class="text-secondary">Monday</span>
+                <span class="font-headline">Closed</span>
               </div>
-            </div>
-
-            <!-- Kitchen Hours -->
-            <div class="pl-9 mt-8">
-              <p class="text-primary font-headline font-bold uppercase tracking-widest text-xs mb-3">Kitchen</p>
-              <div class="space-y-2">
-                {days.map((day) => (
-                  <div class="flex justify-between items-center border-b border-outline-variant/20 pb-2">
-                    <span class="text-secondary text-sm capitalize font-medium">{day}</span>
-                    <span class="text-on-surface text-sm">{siteInfo.hours.kitchen[day as Day]}</span>
-                  </div>
-                ))}
+              <div class="flex justify-between items-baseline border-b border-outline-variant/20 pb-2">
+                <span class="text-secondary">Tue — Sun</span>
+                <span class="font-headline">4pm — 2am</span>
+              </div>
+              <p class="text-xs text-outline mb-3 mt-6 uppercase tracking-widest">Kitchen</p>
+              <div class="flex justify-between items-baseline border-b border-outline-variant/20 pb-2">
+                <span class="text-secondary">Monday</span>
+                <span class="font-headline">Closed</span>
+              </div>
+              <div class="flex justify-between items-baseline border-b border-outline-variant/20 pb-2">
+                <span class="text-secondary">Tue — Thu, Sun</span>
+                <span class="font-headline">4pm — 11pm</span>
+              </div>
+              <div class="flex justify-between items-baseline border-b border-outline-variant/20 pb-2">
+                <span class="text-secondary">Fri — Sat</span>
+                <span class="font-headline">4pm — 2am</span>
               </div>
             </div>
           </div>
-
         </div>
 
-        <!-- Right Column: Contact Form -->
-        <div>
-          <form
-            action="https://formspree.io/f/placeholder"
-            method="POST"
-            class="space-y-10"
-          >
-            <!-- Name -->
-            <div class="contact-field">
-              <label for="name" class="block text-xs font-headline font-bold uppercase tracking-[0.3em] text-secondary mb-3">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                class="contact-input w-full bg-transparent text-on-surface py-3 outline-none"
-                placeholder="Your name"
-              />
+        <!-- Form Column -->
+        <div class="lg:col-span-8 bg-surface-container-low p-12 md:p-20 relative">
+          <form action="https://formspree.io/f/PLACEHOLDER" method="POST" class="space-y-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div class="relative group">
+                <label class="block text-xs uppercase tracking-[0.2em] text-outline group-focus-within:text-primary transition-colors mb-2">Your Name</label>
+                <input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-4 font-headline text-xl transition-all placeholder:text-surface-variant" placeholder="Full name" type="text" name="name" required />
+              </div>
+              <div class="relative group">
+                <label class="block text-xs uppercase tracking-[0.2em] text-outline group-focus-within:text-primary transition-colors mb-2">Email Address</label>
+                <input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-4 font-headline text-xl transition-all placeholder:text-surface-variant" placeholder="your@email.com" type="email" name="email" required />
+              </div>
             </div>
-
-            <!-- Email -->
-            <div class="contact-field">
-              <label for="email" class="block text-xs font-headline font-bold uppercase tracking-[0.3em] text-secondary mb-3">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                class="contact-input w-full bg-transparent text-on-surface py-3 outline-none"
-                placeholder="your@email.com"
-              />
+            <div class="relative group">
+              <label class="block text-xs uppercase tracking-[0.2em] text-outline group-focus-within:text-primary transition-colors mb-2">Subject</label>
+              <select class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-4 font-headline text-xl transition-all appearance-none cursor-pointer" name="subject">
+                <option class="bg-surface text-on-surface" value="general">General Question</option>
+                <option class="bg-surface text-on-surface" value="reservation">Reservation Inquiry</option>
+                <option class="bg-surface text-on-surface" value="event">Private Event</option>
+                <option class="bg-surface text-on-surface" value="catering">Catering</option>
+              </select>
             </div>
-
-            <!-- Phone -->
-            <div class="contact-field">
-              <label for="phone" class="block text-xs font-headline font-bold uppercase tracking-[0.3em] text-secondary mb-3">Phone</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                class="contact-input w-full bg-transparent text-on-surface py-3 outline-none"
-                placeholder="(226) 000-0000"
-              />
+            <div class="relative group">
+              <label class="block text-xs uppercase tracking-[0.2em] text-outline group-focus-within:text-primary transition-colors mb-2">Message</label>
+              <textarea class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-4 font-headline text-xl transition-all placeholder:text-surface-variant resize-none" placeholder="Tell us what's on your mind..." rows="4" name="message" required></textarea>
             </div>
-
-            <!-- Message -->
-            <div class="contact-field">
-              <label for="message" class="block text-xs font-headline font-bold uppercase tracking-[0.3em] text-secondary mb-3">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                required
-                class="contact-input w-full bg-transparent text-on-surface py-3 outline-none resize-none"
-                placeholder="Tell us what's on your mind..."
-              ></textarea>
+            <div class="pt-8">
+              <button class="group relative w-full md:w-auto bg-primary text-on-primary px-16 py-6 font-headline font-black uppercase tracking-widest flex items-center justify-center gap-4 transition-transform active:scale-95" type="submit">
+                Send Inquiry
+                <span class="material-symbols-outlined text-xl group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
+              </button>
             </div>
-
-            <!-- Submit -->
-            <button
-              type="submit"
-              class="bg-primary text-on-primary font-headline font-bold uppercase tracking-widest text-sm px-10 py-5 hover:bg-primary-container transition-colors duration-300"
-            >
-              Send Message
-            </button>
           </form>
         </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== SECTION 3: MAP ===== -->
-  <section class="animate-on-scroll">
-    <div class="relative overflow-hidden group" style="height: 60vh;">
-      <img
-        src={mapImage}
-        alt="On A Roll location map"
-        class="w-full h-full object-cover transition-all duration-700"
-        style="filter: grayscale(100%);"
-        onmouseover="this.style.filter='grayscale(0%)'"
-        onmouseout="this.style.filter='grayscale(100%)'"
-      />
-      <!-- Location overlay -->
-      <div class="absolute inset-0 flex items-end pointer-events-none">
-        <div class="px-4 md:px-8 pb-10 max-w-screen-2xl mx-auto w-full">
-          <div class="bg-surface-container-lowest/90 backdrop-blur-sm p-6 inline-block">
-            <div class="flex items-center gap-3">
-              <span class="material-symbols-outlined text-primary">location_on</span>
-              <div>
-                <p class="font-headline font-black uppercase text-on-surface tracking-widest text-sm">{siteInfo.name}</p>
-                <p class="text-secondary text-sm font-light mt-1">{siteInfo.address}</p>
-              </div>
-            </div>
+    <!-- Map Section -->
+    <section class="w-full h-[600px] relative overflow-hidden bg-surface-container-lowest grayscale contrast-125 brightness-50 hover:grayscale-0 hover:brightness-100 transition-all duration-1000">
+      <div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBiC4dZ-w_dT_l4YztcN8iEvk3Hh2ps7V29u8n2h25Ox40rE1VrF-kh1uQlSl-k0dGAC4RG_AxtSMUOdOEZ_tIxSceZNJdeOMC2ftA2QyeJC9EA1lkU1tOAX5q1L7HHowbcGFcCDGE4I4z8B4cctuhDUuIMqczeEmgekWNgS2BVYNcQEe9L3-pQbhQvGE7StsxyNznzNBpeI7dsawOJTifD3F2tE4HALA04zVhlYO1m-jlcF5AhOf_dEDFdTYcVliYnhJI1b31N6qO-')"></div>
+      <!-- Map Overlay UI -->
+      <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div class="relative">
+          <div class="w-4 h-4 bg-primary rounded-full animate-ping absolute -inset-0"></div>
+          <div class="w-4 h-4 bg-primary relative z-10"></div>
+          <div class="absolute top-8 left-1/2 -translate-x-1/2 bg-surface p-4 border border-outline-variant/30 backdrop-blur-md min-w-[200px] text-center">
+            <p class="text-xs tracking-widest text-primary font-bold uppercase mb-1">On A Roll</p>
+            <p class="text-[10px] text-secondary leading-tight uppercase">63 Pitt St E, Windsor</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+      <!-- Gradient Scrims -->
+      <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-background to-transparent"></div>
+      <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent"></div>
+    </section>
 
-  <!-- ===== SECTION 4: QUOTE ===== -->
-  <section class="py-40 animate-on-scroll">
-    <div class="px-4 md:px-8 max-w-screen-2xl mx-auto text-center space-y-8">
-      <div class="w-12 h-[2px] bg-primary mx-auto"></div>
-      <blockquote class="font-headline font-black uppercase leading-none tracking-tight text-on-surface text-glow" style="font-size: clamp(1.5rem, 4vw, 4rem);">
-        "Dining is not just about the food,<br class="hidden md:block" /> it's about the choreography<br class="hidden md:block" /> of the experience."
-      </blockquote>
-      <div class="w-12 h-[2px] bg-primary mx-auto"></div>
-    </div>
-  </section>
+    <!-- Cinematic Quote Section -->
+    <section class="py-32 px-8 text-center max-w-4xl mx-auto">
+      <span class="material-symbols-outlined text-primary text-4xl mb-8 block">restaurant_menu</span>
+      <h2 class="text-4xl md:text-5xl font-headline italic font-light tracking-tight leading-snug">
+        "Dining is not just about the food, it's about the <span class="text-primary">choreography</span> of the experience."
+      </h2>
+      <p class="mt-8 text-outline uppercase tracking-[0.3em] text-sm">— On A Roll Sushi & Sliders</p>
+    </section>
+  </main>
 
   <Footer />
 </Layout>
-
-<style>
-  .contact-input {
-    border-bottom: 1px solid rgba(82, 68, 59, 0.4);
-    transition: border-color 0.3s ease;
-  }
-  .contact-input:focus {
-    border-bottom-color: #ffb784;
-  }
-  .contact-input::placeholder {
-    color: rgba(229, 226, 225, 0.3);
-  }
-</style>
