@@ -122,22 +122,18 @@ import siteInfo from '../data/site-info.json';
     </section>
 
     <!-- Map Section -->
-    <section class="w-full h-[600px] relative overflow-hidden bg-surface-container-lowest grayscale contrast-125 brightness-50 hover:grayscale-0 hover:brightness-100 transition-all duration-1000">
-      <div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBiC4dZ-w_dT_l4YztcN8iEvk3Hh2ps7V29u8n2h25Ox40rE1VrF-kh1uQlSl-k0dGAC4RG_AxtSMUOdOEZ_tIxSceZNJdeOMC2ftA2QyeJC9EA1lkU1tOAX5q1L7HHowbcGFcCDGE4I4z8B4cctuhDUuIMqczeEmgekWNgS2BVYNcQEe9L3-pQbhQvGE7StsxyNznzNBpeI7dsawOJTifD3F2tE4HALA04zVhlYO1m-jlcF5AhOf_dEDFdTYcVliYnhJI1b31N6qO-')"></div>
-      <!-- Map Overlay UI -->
-      <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div class="relative">
-          <div class="w-4 h-4 bg-primary rounded-full animate-ping absolute -inset-0"></div>
-          <div class="w-4 h-4 bg-primary relative z-10"></div>
-          <div class="absolute top-8 left-1/2 -translate-x-1/2 bg-surface p-4 border border-outline-variant/30 backdrop-blur-md min-w-[200px] text-center">
-            <p class="text-xs tracking-widest text-primary font-bold uppercase mb-1">On A Roll</p>
-            <p class="text-[10px] text-secondary leading-tight uppercase">63 Pitt St E, Windsor</p>
-          </div>
-        </div>
-      </div>
+    <section class="w-full h-[600px] relative overflow-hidden bg-surface-container-lowest">
+      <iframe
+        title="On A Roll Sushi & Sliders location"
+        class="absolute inset-0 w-full h-full border-0 grayscale contrast-125 brightness-50 hover:grayscale-0 hover:brightness-100 transition-all duration-1000"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=On+A+Roll+Sushi+%26+Sliders,+63+Pitt+St+E,+Windsor,+ON&output=embed"
+        allowfullscreen>
+      </iframe>
       <!-- Gradient Scrims -->
-      <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-background to-transparent"></div>
-      <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent"></div>
+      <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-background to-transparent pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent pointer-events-none"></div>
     </section>
 
     <!-- Cinematic Quote Section -->

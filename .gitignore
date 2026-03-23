@@ -1,1 +1,5 @@
 .forge-context.md
+.vercel
+dist/
+.astro/
+node_modules/
