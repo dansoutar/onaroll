@@ -47,6 +47,12 @@
   -webkit-backdrop-filter: blur(20px);
 }
 
+/* Menu tab active state */
+.menu-tab[data-active="true"] {
+  color: #ffb784;
+  border-bottom: 2px solid #ffb784;
+}
+
 /* Scroll animations */
 .animate-on-scroll {
   opacity: 0;

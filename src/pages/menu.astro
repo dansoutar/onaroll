@@ -29,13 +29,13 @@ const slidersImage = 'https://lh3.googleusercontent.com/aida-public/AB6AXuBO9NnB
   <!-- Tab Navigation -->
   <section class="sticky top-[88px] z-40 bg-surface border-b border-outline-variant/10">
     <div class="max-w-screen-2xl mx-auto px-8 overflow-x-auto">
-      <div class="flex space-x-12 py-8 min-w-max">
-        <a class="text-primary font-headline font-bold uppercase tracking-widest text-sm border-b-2 border-primary pb-1" href="#sushi">Sushi</a>
-        <a class="text-secondary hover:text-primary font-headline font-bold uppercase tracking-widest text-sm transition-colors" href="#sliders">Sliders</a>
-        <a class="text-secondary hover:text-primary font-headline font-bold uppercase tracking-widest text-sm transition-colors" href="#appetizers">Appetizers</a>
-        <a class="text-secondary hover:text-primary font-headline font-bold uppercase tracking-widest text-sm transition-colors" href="#cocktails">Cocktails</a>
-        <a class="text-secondary hover:text-primary font-headline font-bold uppercase tracking-widest text-sm transition-colors" href="#drinks">Wine &amp; Beer</a>
-      </div>
+      <nav id="menu-tabs" class="flex space-x-12 py-8 min-w-max">
+        <a class="menu-tab text-secondary hover:text-primary font-headline font-bold uppercase tracking-widest text-sm transition-colors pb-1" href="#sushi">Sushi</a>
+        <a class="menu-tab text-secondary hover:text-primary font-headline font-bold uppercase tracking-widest text-sm transition-colors pb-1" href="#sliders">Sliders</a>
+        <a class="menu-tab text-secondary hover:text-primary font-headline font-bold uppercase tracking-widest text-sm transition-colors pb-1" href="#appetizers">Appetizers</a>
+        <a class="menu-tab text-secondary hover:text-primary font-headline font-bold uppercase tracking-widest text-sm transition-colors pb-1" href="#cocktails">Cocktails</a>
+        <a class="menu-tab text-secondary hover:text-primary font-headline font-bold uppercase tracking-widest text-sm transition-colors pb-1" href="#drinks">Wine &amp; Beer</a>
+      </nav>
     </div>
   </section>
 
@@ -245,4 +245,30 @@ const slidersImage = 'https://lh3.googleusercontent.com/aida-public/AB6AXuBO9NnB
   </main>
 
   <Footer />
+
+  <script>
+    const tabs = document.querySelectorAll<HTMLAnchorElement>('.menu-tab');
+    const sectionIds = Array.from(tabs).map(tab => tab.getAttribute('href')!.slice(1));
+    const sections = sectionIds.map(id => document.getElementById(id)!);
+
+    function setActive(id: string) {
+      tabs.forEach(tab => {
+        tab.dataset.active = String(tab.getAttribute('href') === `#${id}`);
+      });
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
+        }
+      },
+      { rootMargin: '-20% 0px -70% 0px' }
+    );
+
+    sections.forEach(section => observer.observe(section));
+    setActive(sectionIds[0]);
+  </script>
 </Layout>
