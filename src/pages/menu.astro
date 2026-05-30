@@ -27,9 +27,9 @@ const slidersImage = '/images/beer-sliders.jpeg';
   </header>
 
   <!-- Tab Navigation -->
-  <section class="sticky top-[88px] z-40 bg-surface border-b border-outline-variant/10">
+  <section class="sticky top-[72px] md:top-[88px] z-40 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10">
     <div class="max-w-screen-2xl mx-auto px-8 overflow-x-auto">
-      <nav id="menu-tabs" class="flex space-x-12 py-8 min-w-max">
+      <nav id="menu-tabs" class="flex space-x-8 md:space-x-12 py-4 md:py-8 min-w-max">
         <a class="menu-tab text-secondary hover:text-primary font-headline font-bold uppercase tracking-widest text-sm transition-colors pb-1" href="#sushi">Sushi</a>
         <a class="menu-tab text-secondary hover:text-primary font-headline font-bold uppercase tracking-widest text-sm transition-colors pb-1" href="#sliders">Sliders</a>
         <a class="menu-tab text-secondary hover:text-primary font-headline font-bold uppercase tracking-widest text-sm transition-colors pb-1" href="#appetizers">Appetizers</a>
@@ -39,10 +39,10 @@ const slidersImage = '/images/beer-sliders.jpeg';
     </div>
   </section>
 
-  <main class="max-w-screen-2xl mx-auto px-8 py-24 space-y-32">
+  <main class="max-w-screen-2xl mx-auto px-8 py-12 md:py-24 space-y-16 md:space-y-32">
 
     <!-- Sushi Section -->
-    <section class="grid grid-cols-1 lg:grid-cols-12 gap-20" id="sushi">
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-20" id="sushi">
       <div class="lg:col-span-4 space-y-8">
         <span class="text-primary uppercase tracking-[0.3em] font-bold text-xs">Section 01</span>
         <h2 class="text-5xl font-headline font-black uppercase leading-none">The Artisan<br/>Sushi Rolls</h2>
@@ -100,7 +100,7 @@ const slidersImage = '/images/beer-sliders.jpeg';
     </section>
 
     <!-- Sliders Section (Asymmetric Image Swap — reversed) -->
-    <section class="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start" id="sliders">
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-20 items-start" id="sliders">
       <div class="lg:col-span-8 order-2 lg:order-1 space-y-16 pt-12">
         <div class="space-y-16">
           {foodMenu.sliders.map((item) => (
@@ -132,14 +132,14 @@ const slidersImage = '/images/beer-sliders.jpeg';
     </section>
 
     <!-- Cocktails Section (Editorial Centered) -->
-    <section class="bg-surface-container-low p-16 md:p-24" id="cocktails">
-      <div class="max-w-4xl mx-auto space-y-24">
+    <section class="bg-surface-container-low p-6 md:p-24" id="cocktails">
+      <div class="max-w-4xl mx-auto space-y-12 md:space-y-24">
         <div class="text-center space-y-6">
           <span class="text-primary uppercase tracking-[0.4em] font-bold text-xs">Section 03</span>
           <h2 class="text-6xl font-headline font-black uppercase tracking-tighter">The Mixology</h2>
           <p class="text-secondary font-light max-w-md mx-auto">All crafted with 1.5oz of liquor. Hand-crafted cocktails perfected by our innovative bartenders.</p>
         </div>
-        <div class="grid grid-cols-1 gap-20">
+        <div class="grid grid-cols-1 gap-12 md:gap-20">
           {drinkMenu.cocktails.map((item) => (
             <div class="group flex flex-col items-center text-center">
               <h3 class="text-3xl font-headline font-bold uppercase tracking-wide group-hover:text-primary transition-colors mb-2">{item.name}</h3>

@@ -23,10 +23,10 @@ import siteInfo from '../data/site-info.json';
             Good Food. Good Music. Good People. Good Vibes.
           </p>
           <div class="flex flex-wrap items-center gap-6">
-            <a href={siteInfo.orderOnline} target="_blank" rel="noopener noreferrer" class="bg-primary text-on-primary px-12 py-5 font-headline font-bold text-lg tracking-widest hover:brightness-110 transition-all inline-block">
+            <a href={siteInfo.orderOnline} target="_blank" rel="noopener noreferrer" class="bg-primary text-on-primary px-8 py-3 md:px-12 md:py-5 font-headline font-bold text-sm md:text-lg tracking-widest hover:brightness-110 transition-all inline-block">
               ORDER NOW
             </a>
-            <a href={siteInfo.reserveTable} target="_blank" rel="noopener noreferrer" class="border-2 border-primary text-primary px-12 py-5 font-headline font-bold text-lg tracking-widest hover:bg-primary hover:text-on-primary transition-all inline-block">
+            <a href={siteInfo.reserveTable} target="_blank" rel="noopener noreferrer" class="border-2 border-primary text-primary px-8 py-3 md:px-12 md:py-5 font-headline font-bold text-sm md:text-lg tracking-widest hover:bg-primary hover:text-on-primary transition-all inline-block">
               RESERVE A TABLE
             </a>
           </div>
@@ -45,13 +45,13 @@ import siteInfo from '../data/site-info.json';
     </section>
 
     <!-- Section 2: Three Pillars -->
-    <section class="py-24 px-8 bg-surface">
+    <section class="py-12 md:py-24 px-8 bg-surface">
       <div class="max-w-screen-2xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-y-12 gap-x-12 items-start">
           <!-- Specialty Rolls -->
           <div class="md:col-span-7 group">
             <div class="relative overflow-hidden mb-8 aspect-[16/9]">
-              <img alt="Specialty Sushi Rolls" class="w-full h-full object-cover transition-all duration-1000 scale-100 group-hover:scale-105" src="/images/sushi-plate-2.jpeg" />
+              <img alt="Specialty Sushi Rolls" class="w-full h-full object-cover transition-transform duration-700 scale-100 group-hover:scale-105" src="/images/sushi-plate-2.jpeg" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
             <div class="flex items-baseline gap-6">
@@ -65,7 +65,7 @@ import siteInfo from '../data/site-info.json';
           <!-- Unique Sliders -->
           <div class="md:col-span-5 md:mt-24 group">
             <div class="relative overflow-hidden mb-8 aspect-[4/5]">
-              <img alt="Beer and Sliders" class="w-full h-full object-cover transition-all duration-1000 scale-100 group-hover:scale-105" src="/images/beer-sliders.jpeg" />
+              <img alt="Beer and Sliders" class="w-full h-full object-cover transition-transform duration-700 scale-100 group-hover:scale-105" src="/images/beer-sliders.jpeg" />
             </div>
             <div class="flex items-baseline gap-6">
               <span class="font-headline text-6xl font-light text-outline-variant italic">02</span>
@@ -78,7 +78,7 @@ import siteInfo from '../data/site-info.json';
           <!-- Craft Cocktails -->
           <div class="md:col-span-8 md:col-start-3 mt-12 group">
             <div class="relative overflow-hidden mb-8 aspect-[21/9]">
-              <img alt="Craft Cocktails and desserts" class="w-full h-full object-cover transition-all duration-1000 scale-100 group-hover:scale-105" src="/images/dessert-cocktail.jpg" />
+              <img alt="Craft Cocktails and desserts" class="w-full h-full object-cover transition-transform duration-700 scale-100 group-hover:scale-105" src="/images/dessert-cocktail.jpg" />
             </div>
             <div class="flex items-baseline justify-end gap-6 text-right">
               <div class="flex flex-col items-end">
@@ -93,7 +93,7 @@ import siteInfo from '../data/site-info.json';
     </section>
 
     <!-- Section 3: About -->
-    <section class="py-32 bg-surface-container-low overflow-hidden">
+    <section class="py-16 md:py-32 bg-surface-container-low overflow-hidden">
       <div class="max-w-screen-2xl mx-auto px-8 relative">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
           <div class="md:col-span-5 z-10">
@@ -110,14 +110,16 @@ import siteInfo from '../data/site-info.json';
           </div>
           <div class="md:col-span-7 relative">
             <div class="absolute -top-20 -left-20 w-64 h-64 bg-primary/10 blur-3xl rounded-full"></div>
-            <img alt="On A Roll patio" class="w-full aspect-[4/5] object-cover" src="/images/patio.jpeg" />
+            <div class="overflow-hidden group">
+              <img alt="On A Roll patio" class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" src="/images/patio.jpeg" />
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Section 4: Signature Dishes -->
-    <section class="py-32 px-8 bg-surface-container-lowest">
+    <section class="py-16 md:py-32 px-8 bg-surface-container-lowest">
       <div class="max-w-screen-2xl mx-auto">
         <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
           <div class="max-w-2xl">
@@ -128,7 +130,7 @@ import siteInfo from '../data/site-info.json';
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-outline-variant/10">
           <!-- Rocky Raccoon -->
-          <div class="bg-surface p-12 md:p-20 group hover:bg-surface-container-low transition-colors duration-500">
+          <div class="bg-surface p-6 md:p-20 group hover:bg-surface-container-low transition-colors duration-500">
             <div class="aspect-square overflow-hidden mb-12">
               <img alt="Rocky Raccoon Roll" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700" src="/images/rocky-raccoon.jpg" />
             </div>
@@ -140,7 +142,7 @@ import siteInfo from '../data/site-info.json';
             <a href="/menu" class="text-xs font-label tracking-[0.3em] uppercase text-outline-variant group-hover:text-primary transition-colors">Experience flavor</a>
           </div>
           <!-- Rocket Man -->
-          <div class="bg-surface p-12 md:p-20 group hover:bg-surface-container-low transition-colors duration-500">
+          <div class="bg-surface p-6 md:p-20 group hover:bg-surface-container-low transition-colors duration-500">
             <div class="aspect-square overflow-hidden mb-12">
               <img alt="Rocket Man Rainbow Roll" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700" src="/images/rocket-man.jpg" />
             </div>
@@ -156,7 +158,7 @@ import siteInfo from '../data/site-info.json';
     </section>
 
     <!-- Section 5: Gallery -->
-    <section class="py-32 bg-surface">
+    <section class="py-16 md:py-32 bg-surface">
       <div class="max-w-screen-2xl mx-auto px-8">
         <div class="text-center mb-24">
           <h2 class="font-headline text-5xl md:text-7xl font-black tracking-tighter mb-4">LET THE GOOD TIMES ROLL</h2>
@@ -184,36 +186,30 @@ import siteInfo from '../data/site-info.json';
     </section>
 
     <!-- Section 6: Live Music -->
-    <section class="py-32 bg-surface-container-low relative overflow-hidden">
+    <section class="py-16 md:py-32 bg-surface-container-low relative overflow-hidden">
       <div class="absolute inset-0 opacity-10 pointer-events-none">
         <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/pinstriped-dark.png')]"></div>
       </div>
       <div class="max-w-screen-2xl mx-auto px-8 relative z-10">
         <div class="flex flex-col md:flex-row gap-16 items-center">
           <div class="md:w-1/2">
-            <span class="font-label text-primary text-xs tracking-[0.5em] uppercase mb-8 block">On Stage Tonight</span>
+            <span class="font-label text-primary text-xs tracking-[0.5em] uppercase mb-8 block">Every Weekend</span>
             <h2 class="font-headline text-7xl md:text-9xl font-black tracking-tighter mb-8 italic music-glitch transition-all">LIVE ACTS</h2>
             <div class="space-y-6">
-              <div class="border-l-4 border-primary pl-6 py-2 group hover:bg-surface-container-high transition-colors cursor-default">
-                <p class="text-primary font-headline text-lg font-bold mb-1">TONIGHT @ 9PM</p>
-                <h3 class="text-on-surface font-headline text-3xl font-bold uppercase">The Vinyl Collective</h3>
-                <p class="text-secondary font-label text-xs tracking-widest mt-1">Experimental Jazz Fusion</p>
-              </div>
-              <div class="border-l-4 border-outline-variant/30 pl-6 py-2 group hover:border-primary transition-all">
-                <p class="text-outline-variant font-headline text-lg font-bold mb-1 group-hover:text-primary">FRI @ 10PM</p>
-                <h3 class="text-secondary font-headline text-3xl font-bold uppercase group-hover:text-on-surface">Neon Echo</h3>
-                <p class="text-secondary font-label text-xs tracking-widest mt-1">Synth-Rock Revival</p>
-              </div>
-              <div class="border-l-4 border-outline-variant/30 pl-6 py-2 group hover:border-primary transition-all">
-                <p class="text-outline-variant font-headline text-lg font-bold mb-1 group-hover:text-primary">SAT @ 11PM</p>
-                <h3 class="text-secondary font-headline text-3xl font-bold uppercase group-hover:text-on-surface">DJ OMAKASE</h3>
-                <p class="text-secondary font-label text-xs tracking-widest mt-1">Deep House &amp; Rare Grooves</p>
+              <div class="border-l-4 border-primary pl-6 py-4">
+                <p class="text-on-surface font-body text-xl leading-relaxed mb-4">We host live music and entertainment every weekend. From jazz to rock, there's always something happening at On A Roll.</p>
+                <p class="text-secondary font-body text-lg leading-relaxed mb-6">Upcoming lineup coming soon.</p>
+                <a href={siteInfo.social.instagram} target="_blank" rel="noopener noreferrer" class="text-primary font-headline font-bold text-sm tracking-[0.2em] uppercase border-b border-primary/30 pb-1 hover:border-primary transition-all">Follow @onaroll63 for updates</a>
               </div>
             </div>
           </div>
           <div class="md:w-1/2 grid grid-cols-2 gap-4">
-            <img alt="Live musician singing at On A Roll" class="w-full aspect-[4/5] object-cover rounded-sm shadow-2xl hover:scale-[1.02] transition-transform" src="/images/singer.jpg" />
-            <img alt="Bar atmosphere at On A Roll" class="w-full aspect-[4/5] object-cover rounded-sm shadow-2xl translate-y-12 hover:scale-[1.02] transition-transform" src="/images/bar-interior.jpg" />
+            <div class="overflow-hidden rounded-sm shadow-2xl group">
+              <img alt="Live musician singing at On A Roll" class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" src="/images/singer.jpg" />
+            </div>
+            <div class="overflow-hidden rounded-sm shadow-2xl translate-y-12 group">
+              <img alt="Bar atmosphere at On A Roll" class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" src="/images/bar-interior.jpg" />
+            </div>
           </div>
         </div>
       </div>
