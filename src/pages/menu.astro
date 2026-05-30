@@ -7,9 +7,9 @@ import MenuSection from '../components/MenuSection.astro';
 import foodMenu from '../data/food-menu.json';
 import drinkMenu from '../data/drink-menu.json';
 
-const menuHeroImage = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCkujebGhVIjtnk36as0PKrskNnhL4tGP2nOxlCGZggmynM8e_9SIHGU2K3pPfnSyHBJ2mmYw8vmIpHiyZYQfl0ONLbR-hB-lmMCbX9wRKyBfZNNZ5ehjSV_d2i-JDO69ljHwvGZrEP8aei-4bTuuRG7uDDVoTIPyWzzkAHYffxt-FvnxqbXv4McevTi1ckSpJUAdi7s41e832HdvolaYLVvDtV4JYD5H7IRcWG2geyaJi3gW3NGu5hMwtiX9f5OA-pCPKsGOwZtQmD';
-const chefImage = 'https://lh3.googleusercontent.com/aida-public/AB6AXuDn258Ytcfh4AL-0MzgiIAuphXhlSLV2Y9OmLrwqvixV9kBdRPSC1yMVGUjttVZQY-3YcaBMyL3lxdTS7XKC4SiXaWjMGyf1MfffPfU23D6dpEtCEGOWm7yfAS57u1IiqCQKRRtLPvqxmAu4fnvNlCiSW664d85wT0WIwNUFEcWrSfL7xMyhDYuI-LgdT2H9MCeT-j0TPl6-ojmhRGPN5wAIog0_7YisjHd2WYR03otVkEIMupw6MXmRIMTncl4e3lASmoBxMLSd9Ni';
-const slidersImage = 'https://lh3.googleusercontent.com/aida-public/AB6AXuBO9NnBwS8mOXqPkKqVL9hTwdJbOAI9iVeNnJk1cF1Ahi8P3pZQKk1jNAP4rO0MlcerZbgoTjq6GvTYSC5h5THpD93K1j-j4Mp4UBKPZvy9yhjqjlEHuiwpLLIEFX8BCyy0sYVPLsC-W98O2T5lOWEc4LMSD4sblIhtY-QaujenGa0hHHZoDVKpPA6vpyrzE2-tbDD6ibUJ5rlU5Fk7dmd-_haHwGyLt47MSRTxtDOXIiPLztEB2ZA62eTJhmxqsHomyuUVYIBDjJTH';
+const menuHeroImage = '/images/rolls-closeup.jpg';
+const chefImage = '/images/sushi-platter-full.jpg';
+const slidersImage = '/images/beer-sliders.jpeg';
 ---
 
 <Layout title="Menu | On A Roll Sushi & Sliders">
@@ -111,7 +111,7 @@ const slidersImage = 'https://lh3.googleusercontent.com/aida-public/AB6AXuBO9NnB
       <div class="lg:col-span-4 order-1 lg:order-2 space-y-8">
         <span class="text-primary uppercase tracking-[0.3em] font-bold text-xs">Section 02</span>
         <h2 class="text-5xl font-headline font-black uppercase leading-none text-right lg:text-left">Signature<br/>Sliders</h2>
-        <p class="text-secondary font-light leading-relaxed max-w-sm">$6 each or 3 for $15. Every slider is a study in texture and bold flavor.</p>
+        <p class="text-secondary font-light leading-relaxed max-w-sm">$7 each or 3 for $18. Every slider is a study in texture and bold flavor.</p>
         <div class="aspect-[3/4] w-full bg-surface-container-low overflow-hidden">
           <img alt="Gourmet Sliders" class="w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-700" src={slidersImage} />
         </div>
@@ -165,28 +165,18 @@ const slidersImage = 'https://lh3.googleusercontent.com/aida-public/AB6AXuBO9NnB
         <h3 class="text-2xl font-headline font-bold uppercase tracking-tight text-primary mb-8">White Wine</h3>
         <div class="space-y-12">
           {drinkMenu.wine.white.map((item) => (
-            <MenuItem name={item.name} price={item.price} description={item.description} />
+            <MenuItem name={item.name} price={item.price} bottle={item.bottle} description={item.description} />
           ))}
         </div>
       </div>
 
       <!-- Red Wine -->
       <div>
-        <h3 class="text-2xl font-headline font-bold uppercase tracking-tight text-primary mb-8">Red Wine</h3>
-        <div class="space-y-12">
-          {drinkMenu.wine.red.map((item) => (
-            <MenuItem name={item.name} price={item.price} description={item.description} />
-          ))}
-        </div>
-      </div>
-
-      <!-- Wine By The Bottle -->
-      <div>
-        <h3 class="text-2xl font-headline font-bold uppercase tracking-tight text-primary mb-2">Wine By The Bottle</h3>
+        <h3 class="text-2xl font-headline font-bold uppercase tracking-tight text-primary mb-2">Red Wine</h3>
         <p class="text-outline text-sm font-label italic mb-8">Wine subject to tax</p>
         <div class="space-y-12">
-          {drinkMenu.wine.bottle.map((item) => (
-            <MenuItem name={item.name} price={item.price} />
+          {drinkMenu.wine.red.map((item) => (
+            <MenuItem name={item.name} price={item.price} bottle={item.bottle} description={item.description} />
           ))}
         </div>
       </div>

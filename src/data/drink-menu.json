@@ -1,64 +1,59 @@
 {
   "cocktails": [
-    { "name": "Phil Collins", "price": 13, "description": "Bombay Sapphire Gin, triple sec, fresh lemon, fresh lime, fresh orange, sugar, soda" },
-    { "name": "Motor City Manhattan", "price": 12, "description": "Canadian Club 12 Year, sweet vermouth, cherry bitters, black cherry" },
-    { "name": "Old Fashioned", "price": 13, "description": "Jim Beam Bourbon, brown simple syrup, burnt orange", "note": "+$2 for Premium" },
-    { "name": "Cucumber Thunder", "price": 13, "description": "house gin, mint, cucumber, lime, simple syrup, soda" },
-    { "name": "Kentucky Ass", "price": 13, "description": "Maker's Mark Bourbon, house-made ginger syrup, crushed ice, lime" },
-    { "name": "Boston George", "price": 14, "description": "Canadian Club Rye, egg whites, fresh lemon & lime, simple syrup, bitters" },
-    { "name": "Buddha Tea", "price": 12, "description": "house rye, peach schnapps, fresh lemon & lime, house-made ginger syrup, tea blend" },
-    { "name": "Mojito", "price": 12, "description": "house rum, mint, lime, soda, house-made puree", "note": "Premium: strawberry or blueberry +$1" },
-    { "name": "Caesar", "price": 13, "description": "house vodka, house-made caesar mix, seasonal veg garnish" },
-    { "name": "Spiked Lemonade", "price": 11, "description": "vodka, fresh squeezed lemonade, house made puree", "note": "Premium: strawberry or blueberry +$1" },
-    { "name": "Espresso Martini", "price": 14, "description": "house vodka, kahlua, espresso" },
-    { "name": "Last Word / Wrong Word", "price": 14, "description": "house gin, green chartreuse, maraschino liqueur, lime", "note": "Wrong Word adds mezcal rinse +$1" },
-    { "name": "The Toronto", "price": 12, "description": "Canadian Club 12 Year, fernet branca, bitters, brown simple syrup, burnt orange" },
-    { "name": "Negroni", "price": 13, "description": "house gin, sweet vermouth, burnt orange", "note": "+$2 for Premium" }
+    { "name": "Phil Collins", "price": 14, "description": "house gin, triple sec, fresh lemon, lime & orange, simple syrup, soda" },
+    { "name": "Motor City Manhattan", "price": 14, "description": "Canadian Club 12 Year, sweet vermouth, cherry bitters, black cherry" },
+    { "name": "Old Fashioned", "price": 13, "description": "pike creek, brown simple syrup, burnt orange", "note": "*$16 Premium" },
+    { "name": "Cucumber Thunder", "price": 14, "description": "house gin, mint, cucumber, lime, simple syrup, soda" },
+    { "name": "Kentucky Ass", "price": 15, "description": "house whiskey, house-made ginger syrup, crushed ice, lime" },
+    { "name": "Boston George", "price": 16, "description": "Canadian Club Rye, egg whites, fresh lemon & lime, simple syrup, bitters" },
+    { "name": "Buddha Tea", "price": 15, "description": "house rye, peach schnapps, fresh lemon & lime, house-made ginger syrup, simple syrup, tea blend" },
+    { "name": "Mojito", "price": 14, "description": "house rum, mint, lime, soda, house-made puree", "note": "*Premium: strawberry or blueberry $15" },
+    { "name": "Caesar", "price": 15, "description": "house vodka, house-made caesar mix, seasonal veg garnish, pickle juice" },
+    { "name": "Spiked Lemonade", "price": 13, "description": "vodka, fresh squeezed lemonade, house-made puree", "note": "*Premium: strawberry or blueberry $14" },
+    { "name": "Espresso Martini", "price": 16, "description": "vanilla vodka, kahlua, espresso, baileys" },
+    { "name": "Last Word / Wrong Word", "price": 15, "description": "house gin, green chartreuse, maraschino liqueur, lime", "note": "Sub gin for tequila | For Wrong Word add $1 mezcal rinse" },
+    { "name": "The Toronto", "price": 14, "description": "Canadian Club 12 Year, fernet branca, bitters, brown simple syrup, burnt orange" },
+    { "name": "Negroni", "price": 15, "description": "house gin, campari, sweet vermouth, burnt orange", "note": "*$17 Premium" },
+    { "name": "Margarita", "price": 14, "description": "tequila, triple sec, lime & lemon juice, simple syrup" }
   ],
   "wine": {
     "white": [
-      { "name": "Santa Margherita, Pinot Grigio", "price": 11, "description": "Alto Adige/Trentino, Italy" },
-      { "name": "Jackson Triggs, Sauvignon Blanc", "price": 8, "description": "Canada" }
+      { "name": "Jackson-Triggs, Sauvignon Blanc", "price": 10, "bottle": 46, "description": "Canada" },
+      { "name": "Santa Margherita, Pinot Grigio", "price": 13, "bottle": 52, "description": "Alto Adige/Trentino, Italy" }
     ],
     "red": [
-      { "name": "J Lohr Seven Oaks Cabernet Sauvignon", "price": 13, "description": "California, USA" },
-      { "name": "Folonari Valpolicella", "price": 7, "description": "Veneto, Italy" }
-    ],
-    "bottle": [
-      { "name": "J Lohr Seven Oaks Cabernet Sauvignon", "price": 52 },
-      { "name": "Santa Margherita, Pinot Grigio", "price": 40 }
+      { "name": "Folonari Valpolicella", "price": 10, "bottle": 46, "description": "Veneto, Italy" },
+      { "name": "Perez Cruz Cabernet Sauvignon", "price": 14, "bottle": 54, "description": "Chile" }
     ]
   },
   "sake": [
-    { "name": "Hot Sake", "price": 12 },
-    { "name": "Sake Bomb", "price": 7 }
+    { "name": "Hot Sake", "price": 14 },
+    { "name": "Sake Bomb", "price": 8 }
   ],
   "beer": {
     "premium": [
-      { "name": "Kronenbourg Lager", "price": 7.25 },
-      { "name": "Corona", "price": 7.25 },
-      { "name": "Heineken", "price": 7.25 },
-      { "name": "Twisted Tea", "price": 7.25 },
-      { "name": "Kronenbourg Rouge", "price": 7.25 },
-      { "name": "Kronenbourg Blanc", "price": 7.25 }
+      { "name": "Stella Artois", "price": 8.00 },
+      { "name": "Corona", "price": 8.00 },
+      { "name": "Heineken", "price": 8.00 },
+      { "name": "Pabst Ice Tea", "price": 8.00 }
     ],
     "domestic": [
-      { "name": "Budweiser", "price": 5.50 },
-      { "name": "Bud Light", "price": 5.50 },
-      { "name": "Coors Light", "price": 5.50 },
-      { "name": "Canadian", "price": 5.50 },
-      { "name": "Sleeman Clear", "price": 5.50 },
-      { "name": "Moosehead", "price": 5.50 }
+      { "name": "Budweiser", "price": 7.00 },
+      { "name": "Bud Light", "price": 7.00 },
+      { "name": "Coors Light", "price": 7.00 },
+      { "name": "Canadian", "price": 7.00 },
+      { "name": "Michelob", "price": 7.00 },
+      { "name": "Moosehead", "price": 7.00 }
     ],
     "onTap": [
-      { "name": "Seasonal Feature", "price": 8.50 },
-      { "name": "Walkerville IPA", "price": 8.50 },
-      { "name": "Sapporo", "price": 8.50 },
-      { "name": "Innis & Gunn Original", "price": 9.50 }
+      { "name": "Sapporo", "price": 9.50 },
+      { "name": "Walkerville IPA", "price": 9.50 },
+      { "name": "Seasonal Feature", "price": 9.50 },
+      { "name": "Walkerville Honest Lager", "price": 9.50 }
     ],
     "tallCans": [
-      { "name": "Guinness Stout", "price": 8 },
-      { "name": "Walkerville Honest Lager", "price": 8 }
+      { "name": "Guinness Stout", "price": 9.50 },
+      { "name": "Walkerville Cider", "price": 9.50 }
     ]
   }
 }

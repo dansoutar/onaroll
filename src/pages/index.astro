@@ -11,7 +11,7 @@ import siteInfo from '../data/site-info.json';
     <!-- Section 1: Hero -->
     <section class="relative h-[90vh] w-full flex items-center overflow-hidden bg-surface-container-lowest">
       <div class="absolute inset-0 z-0">
-        <img alt="Close-up of premium sushi" class="w-full h-full object-cover opacity-80 scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb36S_VgOJ4GGlIYvM5dtHoimthO6OD56lSTWxK-9DOlqF29ETNi4H-ed32jzczT4baZYgDj8Be5lFnx7rWuFwHD9BLqeVNoLwpfDMBklVXUKUujS9w1WbLdDEBguRT4mdUVsLdEQ2fNv5-N_j_p65WH04xuNMZt_LYGQwJGuQdRpp85n42IDqJ-gpNlyTRihc7zZYiEcSNmMwUsnnKGmC46w0dQjEbWVtzF1UYryDjpLGZ4G9JiiaxYQQRsS0323s_Y656iqBj3ab" />
+        <img alt="Dragon roll with eel sauce" class="w-full h-full object-cover opacity-80 scale-105" src="/images/sushi-plate.jpeg" />
         <div class="absolute inset-0 cinematic-gradient"></div>
       </div>
       <div class="relative z-10 w-full max-w-screen-2xl mx-auto px-8">
@@ -22,12 +22,13 @@ import siteInfo from '../data/site-info.json';
           <p class="font-body text-xl md:text-2xl text-secondary mb-12 max-w-2xl font-light tracking-wide leading-relaxed">
             Good Food. Good Music. Good People. Good Vibes.
           </p>
-          <div class="flex items-center gap-8">
+          <div class="flex flex-wrap items-center gap-6">
             <a href={siteInfo.orderOnline} target="_blank" rel="noopener noreferrer" class="bg-primary text-on-primary px-12 py-5 font-headline font-bold text-lg tracking-widest hover:brightness-110 transition-all inline-block">
               ORDER NOW
             </a>
-            <div class="hidden md:block w-32 h-px bg-outline-variant"></div>
-            <span class="hidden md:block font-label text-xs tracking-[0.3em] text-secondary uppercase">The Audio-Visual Dining Experience</span>
+            <a href={siteInfo.reserveTable} target="_blank" rel="noopener noreferrer" class="border-2 border-primary text-primary px-12 py-5 font-headline font-bold text-lg tracking-widest hover:bg-primary hover:text-on-primary transition-all inline-block">
+              RESERVE A TABLE
+            </a>
           </div>
         </div>
       </div>
@@ -50,7 +51,7 @@ import siteInfo from '../data/site-info.json';
           <!-- Specialty Rolls -->
           <div class="md:col-span-7 group">
             <div class="relative overflow-hidden mb-8 aspect-[16/9]">
-              <img alt="Specialty Sushi Rolls" class="w-full h-full object-cover transition-all duration-1000 scale-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3-PzXPFDHrK-7sIXHPslX_jyh8gOUOTJ3qdph3mspni6ZujaRcd6mzRVSK7Ch13wghDqXjpOQGzQaDuRCN_ATzrycr4OHX2BtadiF9sWuCIlAABYVPPz0D93Oyb1Vd3LXb0XJfV4EDrveKkkitZHqb-JE7Y-rjLiG_f3R-Z6Sjr9vvWzAtiOSjnunbjPBkmXLogynr9pz_W8yUmNbSqN28bxqyi9MN3Str25fzZYH6nGR4kVDw4hfY4fc2NGdnMTpQbTXtKnCqYz6" />
+              <img alt="Specialty Sushi Rolls" class="w-full h-full object-cover transition-all duration-1000 scale-100 group-hover:scale-105" src="/images/sushi-plate-2.jpeg" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
             <div class="flex items-baseline gap-6">
@@ -64,7 +65,7 @@ import siteInfo from '../data/site-info.json';
           <!-- Unique Sliders -->
           <div class="md:col-span-5 md:mt-24 group">
             <div class="relative overflow-hidden mb-8 aspect-[4/5]">
-              <img alt="Unique Sliders" class="w-full h-full object-cover transition-all duration-1000 scale-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqc03tOLqXYLAiA12OUL6nFOtB6zmkqE_HBJnVKo59ITpY7N5V6yXf8UfUpsVorsjIVnfnIV6QzyAxqbFLhpooDhzBMV60TwnBDhmjAMRyGLHRhWC3kofQ032kazIN1Sv2CjbIq1eN1oof7N9KHWi5-AOCjA_cC1clI6K1o1n3yeiyLsVVwkaLOWfuiHV6CNajb5Exr4RveoXD8Lf1S4dVieHTb9nFz1wN44JA0RgJGgdPv8puwprrASUS-ofgLFbq5Ghm4kASTT03" />
+              <img alt="Beer and Sliders" class="w-full h-full object-cover transition-all duration-1000 scale-100 group-hover:scale-105" src="/images/beer-sliders.jpeg" />
             </div>
             <div class="flex items-baseline gap-6">
               <span class="font-headline text-6xl font-light text-outline-variant italic">02</span>
@@ -77,7 +78,7 @@ import siteInfo from '../data/site-info.json';
           <!-- Craft Cocktails -->
           <div class="md:col-span-8 md:col-start-3 mt-12 group">
             <div class="relative overflow-hidden mb-8 aspect-[21/9]">
-              <img alt="Craft Cocktails" class="w-full h-full object-cover transition-all duration-1000 scale-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu5dJq57GSxxPumrTv4VrmGH22OI2X-csNFbogeU138CAXDtbOPx1-lq15h8z4j5pWZvZhZi2Gv8Hi9cmcF4Czo_COFn3T31rlnMToAZObhelSnHbSe5_950UrYgmnfC-arMdPDqk9oolkZQR0BPdNqFA0ZV0-vRf4Iwc2rKjuTfhg8rZRUbRTiw-Npzr-3aW-GNQ7merD2iMXE6gPyZ5wjAvPka-NKB0gJHYgn26FPOPrY9S0twZhLlrZXr372XpF0WAYmLtDgjCH" />
+              <img alt="Craft Cocktails and desserts" class="w-full h-full object-cover transition-all duration-1000 scale-100 group-hover:scale-105" src="/images/dessert-cocktail.jpg" />
             </div>
             <div class="flex items-baseline justify-end gap-6 text-right">
               <div class="flex flex-col items-end">
@@ -109,11 +110,7 @@ import siteInfo from '../data/site-info.json';
           </div>
           <div class="md:col-span-7 relative">
             <div class="absolute -top-20 -left-20 w-64 h-64 bg-primary/10 blur-3xl rounded-full"></div>
-            <img alt="Atmospheric restaurant interior" class="w-full aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6dbkO0YIlSQ2GdbyRBufDCyT7ND7guuxsvJcOShk0q_IIi4n3FnZ02kW04wNudnGWcQW0ch1adLVCVqI0eXlKpP3kBS4s5Gde0oTDif6ouih29mvw14qtfMOy5lSijME3Rh_wS8r6hv_oCU1RIKtHJSQeXKbg-t4Ka3BWHvVpFO5o6Bzst8UO0WgGtWQuq4V6Vr5iadsv9Uw0DJQLcwIEVEG6a_YE5PDFFsKFhJzluId9F8c6HPYCKghMI9hENsEtFb2rIzLS3gC-" />
-            <div class="absolute -bottom-10 -right-10 hidden md:block w-72 h-48 bg-surface-container-high/40 backdrop-blur-md border border-outline-variant/30 p-8 shadow-2xl">
-              <p class="font-headline text-primary text-4xl font-bold">120+</p>
-              <p class="font-label text-xs tracking-widest text-secondary mt-2 uppercase">Signature Recipes</p>
-            </div>
+            <img alt="On A Roll patio" class="w-full aspect-[4/5] object-cover" src="/images/patio.jpeg" />
           </div>
         </div>
       </div>
@@ -133,11 +130,11 @@ import siteInfo from '../data/site-info.json';
           <!-- Rocky Raccoon -->
           <div class="bg-surface p-12 md:p-20 group hover:bg-surface-container-low transition-colors duration-500">
             <div class="aspect-square overflow-hidden mb-12">
-              <img alt="Rocky Raccoon Roll" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3qF1DeOVdr1Yn490tthq1MScxDF1ZCaZhhVvDg9YYWtX6Qb4k2SkBm8NjcUSmqj1-Ivq42NeBRSf2Zb1LFIFzndlgfwoW_AP7B99KZGDpasqhnyjwMHLkQfukj16H8s10TFwW-d7i0LM1etZR1oFsBmen5t_dzJsTcwR-Z4cCp4FITy0ESQ1L_LpoyQ_FPFL2f_slWfbjbWU_8mCrtLM7egvRuLvm8AjCD7ZrRRtOF_rVS07-0YXkg1PMM403rUVw-Kz0OwJuhe2I" />
+              <img alt="Rocky Raccoon Roll" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700" src="/images/rocky-raccoon.jpg" />
             </div>
             <div class="flex justify-between items-start mb-6">
               <h3 class="font-headline text-4xl font-bold">Rocky Raccoon</h3>
-              <span class="font-headline text-2xl text-primary">$19</span>
+              <span class="font-headline text-2xl text-primary">$21</span>
             </div>
             <p class="text-secondary font-light text-lg mb-8 leading-relaxed">Crab tempura, cucumber, topped with eel & avocado. Our most beloved signature roll — a cult classic.</p>
             <a href="/menu" class="text-xs font-label tracking-[0.3em] uppercase text-outline-variant group-hover:text-primary transition-colors">Experience flavor</a>
@@ -145,11 +142,11 @@ import siteInfo from '../data/site-info.json';
           <!-- Rocket Man -->
           <div class="bg-surface p-12 md:p-20 group hover:bg-surface-container-low transition-colors duration-500">
             <div class="aspect-square overflow-hidden mb-12">
-              <img alt="Rocket Man Rainbow Roll" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWQ05ChWHP2K4_JIl8P-9jDHM2T96BbbFnesW-ABPu2z39teMG0mTrTfhzmEZs5eiHrtrnpmyERou4-7cYQsqgHN2utQp7aPn0hWm4mub-tjy-JOkxI3F458QSJTGSzEVz6m3ViGDuaNqGUU0Mom4aEZgLx32T6cNn61rfw4oEqhYaFRXl8Blcq1UVjAVPvwF7nH3pVmCo14BQ5wMNhqLbC6I7bk-zjq1Yi0IMXzv3VIJnw7yk58eQvyfjsMa2BoMWiffXn5jHdoRq" />
+              <img alt="Rocket Man Rainbow Roll" class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700" src="/images/rocket-man.jpg" />
             </div>
             <div class="flex justify-between items-start mb-6">
               <h3 class="font-headline text-4xl font-bold">Rocket Man</h3>
-              <span class="font-headline text-2xl text-primary">$17</span>
+              <span class="font-headline text-2xl text-primary">$22</span>
             </div>
             <p class="text-secondary font-light text-lg mb-8 leading-relaxed">Crab, cucumber, avocado, topped with tuna, salmon, redsnapper & avocado. A rainbow of flavors.</p>
             <a href="/menu" class="text-xs font-label tracking-[0.3em] uppercase text-outline-variant group-hover:text-primary transition-colors">Experience flavor</a>
@@ -165,22 +162,22 @@ import siteInfo from '../data/site-info.json';
           <h2 class="font-headline text-5xl md:text-7xl font-black tracking-tighter mb-4">LET THE GOOD TIMES ROLL</h2>
           <p class="font-body text-secondary tracking-widest uppercase text-sm">Follow the vibe @onaroll63</p>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+        <div id="gallery" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
           <div class="grid gap-4 md:gap-8">
-            <img alt="Atmosphere 1" class="w-full aspect-[3/4] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9d14DPjk4kKN8gP3VNYxnwQNipb72bxfKjPvjARlRMSJi26UGJifwUZRoug4-w3VFRzp-5hdgg1c9b6LH-JpgIJp8PsL_Cc_DbuFUnVv5fhwx2PVO5HV5KliL_xAhRRRuJ9KAIHs4iYzEMQntxB8H6MtZwVh1TZRr6gIqTkdGTiDEakrXNphrDI4B34LlILSEherGzMkiQ4Qwuwc4zuYjvMmHXBcG49bBNiH6pN0WJ1Nv-5Tc3M8TwkWy-X2aCzNsgyxba9-7sG5E" />
-            <img alt="Atmosphere 2" class="w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5OgtzS14pmtNyl8lJ9STok8rNFkJfy-FxKSDdWii6wuY_i2iIjWe1J7O_ecJwhlKoor_7o7cmtrtWr-FUBXM2u4NxhpfWWuzsb_PJ-RD_KXXNJ9cFDj5zT6cVsG3Roxm_5RGcQv20ibil5yJafGy8Zxm18z9l9NKH0UXMp2EEHUePZokjqErW28d8gMOHpscaxYAttT75rNKtb8Qm78R5H6XhzHqsauoVq8sgv9KONnQ559O8sOBpZFW7DsmFAF0RlNv3lOAzPoLT" />
+            <img alt="Patio vibes" class="gallery-img w-full aspect-[3/4] object-cover cursor-zoom-in hover:brightness-110 transition-all" src="/images/patio-light.jpeg" />
+            <img alt="Friends dining at On A Roll" class="gallery-img w-full aspect-square object-cover cursor-zoom-in hover:brightness-110 transition-all" src="/images/friends-dining.jpg" />
           </div>
           <div class="grid gap-4 md:gap-8 pt-12 md:pt-24">
-            <img alt="Food Detail 1" class="w-full aspect-[3/4] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPcwAfJWzk8QsIdMD7MuhtVWzAKsVAHSPlrx8atP57H1-ubnGIEBN6tjWXSFnndgHJdp9eZG-UNgXgX12A9GN1GMd-iNLRGQBypLHXjVMqahATCu_QVysirvEeCPboldf1rhRsW1Pc6qqWLO5m3bV_uhWifIfMHoQwTCv-dAogmi8UU7uLQSLz-vyjPGPpZP8mSx6Xi4-MOI9dIdd7cdGkgikSqfeRKIH0V8jWb9rV7zFmgVmt_4E-S60AmzofGb6oVhNAkRieBqyL" />
-            <img alt="Music 1" class="w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhG-wHf0xIMiz7wjPmDuTz-kOskheVos0hqYG4E2f1RLdmfBuJ2F3aTNIQjv1QlHth5KFazwLfShKf7Y3217mONB7P1V0-Y0Ui4zDWRNiAyefpuEq5pY2e-ht2dBDliQZuoxYucE9n071-dt8TcEy9NJmNzLjysZhuIaw4FbtpARVZwtZUmFbzsyG7aK79GCfI_9Vmp1mRUPA9X4jacjxhSv5A_06WSA87WoDq6CXYzo92NX4MU8W_ObQBPgWvOo4mhINNwKedSgj4" />
+            <img alt="Greek fries" class="gallery-img w-full aspect-[3/4] object-cover cursor-zoom-in hover:brightness-110 transition-all" src="/images/fries-menu.jpeg" />
+            <img alt="Sushi and beer on patio" class="gallery-img w-full aspect-square object-cover cursor-zoom-in hover:brightness-110 transition-all" src="/images/sushi-beer.jpg" />
           </div>
           <div class="grid gap-4 md:gap-8">
-            <img alt="Atmosphere 3" class="w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuMjMnBtEmh7LRZDe1Kkzu3Xsr04UaxmSoQby6oA0M1m8s99RAHj4h2F2WwjGsrLccSUCcegnV0h9JcKc-Ri2Q4Emlg5iSUxBvhpWIn2ByGBauEcPhic6vpD-BUVaWnTTQzIgv1sQJ7HDuGW23vz-xqFT0HCn3lnOKpepPhlUHnR02RDzkhy3xkpcFXZWmThDsGy87-48dLDiFYEBGFYUqMG4M_2kBJY_LH-BKLtedG3hIjVM36mX3AvZohwBj5PErCYx58h3C2hiE" />
-            <img alt="Chef at work" class="w-full aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBYRVzbdSyo0kp9kHXPmGeD1KZGWntGmfdMklKB8C2Jll7j04YKacGNr8m6_g6dIFK5fJIEYrnhhqzID3dMJKOxKusqmD51OTScuH2BOGJ6wGRrxHLRt0P4216R6KdCKoSLPaRRO-0PvuyH7VNEl0TmkghHE5-Lwd7oQ23jYOd8ySCzT2snm91Mko5M4_GrvRhkG8Q_3DYlK0ggI0eb9exO6PSQ1moOJWFGA_lkq9TxALFfxm8OpM1B_1_qKbQ-4JACq45orxYOIm4" />
+            <img alt="Bar interior" class="gallery-img w-full aspect-square object-cover cursor-zoom-in hover:brightness-110 transition-all" src="/images/bar-interior.jpg" />
+            <img alt="On A Roll sauce bottles" class="gallery-img w-full aspect-[4/5] object-cover cursor-zoom-in hover:brightness-110 transition-all" src="/images/sauce-bottles.jpg" />
           </div>
           <div class="grid gap-4 md:gap-8 pt-8 md:pt-16">
-            <img alt="Cocktail 1" class="w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYceUBfFFbb3cbqRWFM23BjTVn_-wAjPzfHFxsYYqcTpChQql_afuNWGDynd-QwyQeOdBY4cJv0nleZYuHERB0ozz-BS61hrbp_wnfDRRbRH7r7UAtDaH0CfeE_j8XZdL2rnAvEDB3qzI8WaO951hfBSBcieD1hz4CImB-ioZzK_pOvZqTxXL85BKjXb4KVcXHlx0mpdalHcZn4z7CVdB-v0uNySydo7lJeHM25haEWOPTPqjlszkvaqUhYm3KusocCZ1W_rWoCxqk" />
-            <img alt="Crowd vibe" class="w-full aspect-[3/2] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuZtdHFbttv3HRjb2Ci-rBT4033gsBCtERuy5SYo1CBHNBy_UhSycrYVtp5NTQ2wCi7oQj1RMVPeIaMIJS06Oo1BqDSW9HRDHFeyaozt9vGDvsxtwmwtoc_cU1UjMyVdY9q-pCm9x0-gekhsdJEMI1U75fr8iQ-Z7rTRhBxiw_YWGKUqwpfCfceSdCyk_3mOjyXnH_KTIephzq9fh0D5TxBayeDhg5jtcq_U-CLLTsCcYltouf6PuLcEXtbl0Q5762qWXz4xifZnZT" />
+            <img alt="Dessert and espresso martini" class="gallery-img w-full aspect-square object-cover cursor-zoom-in hover:brightness-110 transition-all" src="/images/dessert-cocktail.jpg" />
+            <img alt="Customer enjoying sushi on patio" class="gallery-img w-full aspect-[3/2] object-cover cursor-zoom-in hover:brightness-110 transition-all" src="/images/patio-customer.jpg" />
           </div>
         </div>
       </div>
@@ -215,8 +212,8 @@ import siteInfo from '../data/site-info.json';
             </div>
           </div>
           <div class="md:w-1/2 grid grid-cols-2 gap-4">
-            <img alt="Live Music" class="w-full aspect-[4/5] object-cover rounded-sm shadow-2xl hover:scale-[1.02] transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrUeKdh7Jp35r5NUWVw1Z37MdA_atCMMHbrnMlvEJZHwGGYR3myXoSRrcl6QpJ-CXu_vA16AR6OxM6lJcJNmKL52ZAjaXKnKGriHTYlAC_Nd2LG3FTgJTYi0SBHf5RpyMtWragm8vtZEWs5DNk01n-v3AlW_WlFibPlnBeV26tWL1YVP2CTDZdCDJJVUnkTrVyRbkQb7sNz_u-IFjVe6bwJtTyL07VijVNhG2t_oAKszFv_bNmh-Vur1qEMvVvGAKCzNeecT8Fbaai" />
-            <img alt="DJ setup" class="w-full aspect-[4/5] object-cover rounded-sm shadow-2xl translate-y-12 hover:scale-[1.02] transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM69gNe0qNqHacvTEHOuQnHQw3flDZNRzTYUaPRWfO6VPgcCax8GTjTlWInh8wdFEMBOMfj6Ec70nit7BP5F6xUOY39_ifAMPAM-nWX6pZBF9Bi_NeT1c8KQG00dTNbzP0qZjkwWZvt1yy67__oSVPVbyB2BoZjycAIDH5j3Q4CLAmgRLPmkLQcuHw5lx45JL6WgquX7_Wn6rPuk5o8-vg9DrIkNHstvADzZiiPZrztGFN2LKg4nnlVCuafc8LJOuJ1RYvmMg6kAhZ" />
+            <img alt="Live musician singing at On A Roll" class="w-full aspect-[4/5] object-cover rounded-sm shadow-2xl hover:scale-[1.02] transition-transform" src="/images/singer.jpg" />
+            <img alt="Bar atmosphere at On A Roll" class="w-full aspect-[4/5] object-cover rounded-sm shadow-2xl translate-y-12 hover:scale-[1.02] transition-transform" src="/images/bar-interior.jpg" />
           </div>
         </div>
       </div>
@@ -224,4 +221,52 @@ import siteInfo from '../data/site-info.json';
   </main>
 
   <Footer />
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox-overlay">
+    <span class="lightbox-close">&times;</span>
+    <button class="lightbox-nav lightbox-prev" aria-label="Previous image">
+      <span class="material-symbols-outlined">chevron_left</span>
+    </button>
+    <img id="lightbox-img" src="" alt="" />
+    <button class="lightbox-nav lightbox-next" aria-label="Next image">
+      <span class="material-symbols-outlined">chevron_right</span>
+    </button>
+    <div class="lightbox-counter" id="lightbox-counter"></div>
+  </div>
+
+  <script>
+    const images = Array.from(document.querySelectorAll('.gallery-img'));
+    const overlay = document.getElementById('lightbox')!;
+    const lbImg = document.getElementById('lightbox-img') as HTMLImageElement;
+    const counter = document.getElementById('lightbox-counter')!;
+    let current = 0;
+
+    function show(index: number) {
+      current = (index + images.length) % images.length;
+      const img = images[current] as HTMLImageElement;
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      counter.textContent = `${current + 1} / ${images.length}`;
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function hide() {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    images.forEach((img, i) => img.addEventListener('click', () => show(i)));
+    overlay.querySelector('.lightbox-close')!.addEventListener('click', hide);
+    overlay.querySelector('.lightbox-prev')!.addEventListener('click', (e) => { e.stopPropagation(); show(current - 1); });
+    overlay.querySelector('.lightbox-next')!.addEventListener('click', (e) => { e.stopPropagation(); show(current + 1); });
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) hide(); });
+    document.addEventListener('keydown', (e) => {
+      if (!overlay.classList.contains('active')) return;
+      if (e.key === 'Escape') hide();
+      if (e.key === 'ArrowLeft') show(current - 1);
+      if (e.key === 'ArrowRight') show(current + 1);
+    });
+  </script>
 </Layout>
